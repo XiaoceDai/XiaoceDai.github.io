@@ -41,20 +41,23 @@
 
       .meteor {
         position: absolute;
-        top: -80px;
-        width: 3px;
-        height: 110px;
+        left: var(--left, 50vw);
+        top: var(--top, -18vh);
+        width: var(--width, 2px);
+        height: var(--tail-length, 90px);
         border-radius: 999px;
         background: linear-gradient(
           to bottom,
           rgba(255, 255, 255, 0) 0%,
-          rgba(132, 207, 255, 0.55) 35%,
-          rgba(160, 122, 255, 0.85) 65%,
-          rgba(255, 106, 173, 0.95) 100%
+          var(--tail-mid-1, rgba(132, 207, 255, 0.55)) 35%,
+          var(--tail-mid-2, rgba(160, 122, 255, 0.85)) 65%,
+          var(--tail-end, rgba(255, 106, 173, 0.95)) 100%
         );
         filter: drop-shadow(0 0 10px rgba(121, 184, 255, 0.75));
-        transform: rotate(35deg);
-        animation: meteor-fall linear infinite;
+        transform: rotate(var(--angle, 35deg));
+        animation: meteor-fall var(--duration, 8s) linear infinite;
+        animation-delay: var(--delay, 0s);
+        opacity: 0;
       }
 
       .meteor::before {
@@ -69,92 +72,20 @@
         box-shadow: 0 0 16px rgba(177, 220, 255, 0.95);
       }
 
-      .meteor:nth-child(1) {
-        --planet-head: #e8f5ff;
-        left: 10%;
-        animation-duration: 6s;
-        animation-delay: 0s;
-      }
-      .meteor:nth-child(2) {
-        --planet-head: #c9e3ff;
-        left: 24%;
-        animation-duration: 7.8s;
-        animation-delay: 1.2s;
-      }
-      .meteor:nth-child(3) {
-        --planet-head: #d2ceff;
-        left: 40%;
-        animation-duration: 5.8s;
-        animation-delay: 0.4s;
-      }
-      .meteor:nth-child(4) {
-        --planet-head: #ffd1ea;
-        left: 58%;
-        animation-duration: 8.6s;
-        animation-delay: 2.8s;
-      }
-      .meteor:nth-child(5) {
-        --planet-head: #c8f2ff;
-        left: 72%;
-        animation-duration: 6.7s;
-        animation-delay: 1.8s;
-      }
-      .meteor:nth-child(6) {
-        --planet-head: #f5d3ff;
-        left: 86%;
-        animation-duration: 9.4s;
-        animation-delay: 3.4s;
-      }
-      .meteor:nth-child(7) {
-        --planet-head: #cfe7ff;
-        left: 16%;
-        animation-duration: 6.3s;
-        animation-delay: 2.1s;
-      }
-      .meteor:nth-child(8) {
-        --planet-head: #ffe0f4;
-        left: 33%;
-        animation-duration: 8.1s;
-        animation-delay: 4.2s;
-      }
-      .meteor:nth-child(9) {
-        --planet-head: #e7dcff;
-        left: 49%;
-        animation-duration: 6.9s;
-        animation-delay: 1.6s;
-      }
-      .meteor:nth-child(10) {
-        --planet-head: #d1f0ff;
-        left: 64%;
-        animation-duration: 9.8s;
-        animation-delay: 5.1s;
-      }
-      .meteor:nth-child(11) {
-        --planet-head: #ffe3d9;
-        left: 79%;
-        animation-duration: 7.2s;
-        animation-delay: 3.2s;
-      }
-      .meteor:nth-child(12) {
-        --planet-head: #d7ddff;
-        left: 92%;
-        animation-duration: 10.4s;
-        animation-delay: 4.6s;
-      }
-
       @keyframes meteor-fall {
         0% {
-          transform: translate3d(0, -15vh, 0) rotate(35deg);
+          transform: translate3d(0, 0, 0) rotate(var(--angle, 35deg));
           opacity: 0;
         }
-        10% {
+        8% {
           opacity: 1;
         }
-        70% {
+        68% {
           opacity: 1;
         }
         100% {
-          transform: translate3d(32vw, 120vh, 0) rotate(35deg);
+          transform: translate3d(var(--drift-x, 30vw), var(--fall-y, 125vh), 0)
+            rotate(var(--angle, 35deg));
           opacity: 0;
         }
       }
@@ -258,20 +189,7 @@
     </style>
   </head>
   <body>
-    <div class="meteor-shower" aria-hidden="true">
-      <span class="meteor"></span>
-      <span class="meteor"></span>
-      <span class="meteor"></span>
-      <span class="meteor"></span>
-      <span class="meteor"></span>
-      <span class="meteor"></span>
-      <span class="meteor"></span>
-      <span class="meteor"></span>
-      <span class="meteor"></span>
-      <span class="meteor"></span>
-      <span class="meteor"></span>
-      <span class="meteor"></span>
-    </div>
+    <div class="meteor-shower" aria-hidden="true"></div>
 
     <main class="container">
       <section class="hero">
@@ -322,5 +240,59 @@
 
       <footer>Last updated: March 2026</footer>
     </main>
+    <script>
+      (function () {
+        var shower = document.querySelector(".meteor-shower");
+        if (!shower) return;
+
+        var meteorCount = 188;
+        var headColors = [
+          "#e8f5ff",
+          "#d4eaff",
+          "#d2ceff",
+          "#ffd1ea",
+          "#c8f2ff",
+          "#f5d3ff",
+          "#ffe3d9"
+        ];
+        var tailPalettes = [
+          ["rgba(132, 207, 255, 0.55)", "rgba(160, 122, 255, 0.85)", "rgba(255, 106, 173, 0.95)"],
+          ["rgba(117, 229, 255, 0.5)", "rgba(140, 166, 255, 0.82)", "rgba(229, 128, 255, 0.95)"],
+          ["rgba(153, 223, 255, 0.52)", "rgba(121, 180, 255, 0.84)", "rgba(255, 158, 120, 0.95)"]
+        ];
+
+        for (var i = 0; i < meteorCount; i += 1) {
+          var meteor = document.createElement("span");
+          meteor.className = "meteor";
+
+          var palette = tailPalettes[Math.floor(Math.random() * tailPalettes.length)];
+          var left = Math.random() * 110 - 5;
+          var top = Math.random() * -90 - 5;
+          var duration = 4 + Math.random() * 8;
+          var delay = -Math.random() * 14;
+          var angle = 24 + Math.random() * 28;
+          var driftX = 18 + Math.random() * 40;
+          var fallY = 110 + Math.random() * 30;
+          var tailLength = 70 + Math.random() * 80;
+          var width = 1.2 + Math.random() * 2.6;
+
+          meteor.style.setProperty("--left", left.toFixed(2) + "vw");
+          meteor.style.setProperty("--top", top.toFixed(2) + "vh");
+          meteor.style.setProperty("--duration", duration.toFixed(2) + "s");
+          meteor.style.setProperty("--delay", delay.toFixed(2) + "s");
+          meteor.style.setProperty("--angle", angle.toFixed(2) + "deg");
+          meteor.style.setProperty("--drift-x", driftX.toFixed(2) + "vw");
+          meteor.style.setProperty("--fall-y", fallY.toFixed(2) + "vh");
+          meteor.style.setProperty("--tail-length", tailLength.toFixed(2) + "px");
+          meteor.style.setProperty("--width", width.toFixed(2) + "px");
+          meteor.style.setProperty("--planet-head", headColors[Math.floor(Math.random() * headColors.length)]);
+          meteor.style.setProperty("--tail-mid-1", palette[0]);
+          meteor.style.setProperty("--tail-mid-2", palette[1]);
+          meteor.style.setProperty("--tail-end", palette[2]);
+
+          shower.appendChild(meteor);
+        }
+      })();
+    </script>
   </body>
 </html>
