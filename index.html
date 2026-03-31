@@ -98,6 +98,81 @@
         padding: 3.2rem 1.2rem 2.5rem;
       }
 
+      .ripple-surface {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .ripple-surface > *:not(.water-ripple) {
+        position: relative;
+        z-index: 1;
+      }
+
+      .water-ripple {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 120px;
+        height: 120px;
+        margin: 0;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 0;
+        transform: translate(-50%, -50%) scale(0);
+        background: radial-gradient(
+          circle at 35% 35%,
+          rgba(160, 230, 255, 0.55) 0%,
+          rgba(100, 190, 255, 0.22) 38%,
+          rgba(80, 160, 255, 0.08) 55%,
+          transparent 72%
+        );
+        box-shadow:
+          0 0 0 1px rgba(140, 210, 255, 0.35),
+          0 0 24px rgba(100, 200, 255, 0.25),
+          inset 0 0 18px rgba(200, 240, 255, 0.15);
+        animation: water-ripple 1.05s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+      }
+
+      .water-ripple.water-ripple--echo {
+        width: 100px;
+        height: 100px;
+        animation-name: water-ripple-echo;
+        animation-duration: 1.35s;
+        animation-delay: 0.08s;
+        background: radial-gradient(
+          circle at 40% 40%,
+          transparent 40%,
+          rgba(120, 200, 255, 0.12) 58%,
+          rgba(120, 200, 255, 0.28) 100%
+        );
+        box-shadow: 0 0 0 1px rgba(140, 210, 255, 0.2);
+      }
+
+      @keyframes water-ripple {
+        0% {
+          transform: translate(-50%, -50%) scale(0.08);
+          opacity: 0.9;
+        }
+        45% {
+          opacity: 0.45;
+        }
+        100% {
+          transform: translate(-50%, -50%) scale(3.6);
+          opacity: 0;
+        }
+      }
+
+      @keyframes water-ripple-echo {
+        0% {
+          transform: translate(-50%, -50%) scale(0.05);
+          opacity: 0.55;
+        }
+        100% {
+          transform: translate(-50%, -50%) scale(4.2);
+          opacity: 0;
+        }
+      }
+
       .hero {
         margin-bottom: 1.6rem;
         padding: 1.3rem 1.4rem;
@@ -199,7 +274,7 @@
     <div class="meteor-shower" aria-hidden="true"></div>
 
     <main class="container">
-      <section class="hero">
+      <section class="hero ripple-surface">
         <h1>Xiaoce Dai</h1>
         <p class="subtitle">Personal Research Homepage</p>
         <p class="bio">
@@ -209,7 +284,7 @@
       </section>
 
       <section class="grid">
-        <article class="card">
+        <article class="card ripple-surface">
           <h2>Research Interests</h2>
           <ul>
             <li>Natural Language Processing (NLP)</li>
@@ -219,7 +294,7 @@
           </ul>
         </article>
 
-        <article class="card">
+        <article class="card ripple-surface">
           <h2>Selected Publications</h2>
           <p class="paper">
             <strong>Paper Title One</strong>
@@ -235,7 +310,7 @@
           </p>
         </article>
 
-        <article class="card contact">
+        <article class="card contact ripple-surface">
           <h2>Contact</h2>
           <ul>
             <li>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></li>
@@ -300,6 +375,39 @@
 
           shower.appendChild(meteor);
         }
+      })();
+
+      (function () {
+        function spawnRipple(surface, clientX, clientY) {
+          var rect = surface.getBoundingClientRect();
+          var x = clientX - rect.left;
+          var y = clientY - rect.top;
+          var r1 = document.createElement("span");
+          r1.className = "water-ripple";
+          r1.style.left = x + "px";
+          r1.style.top = y + "px";
+          var r2 = document.createElement("span");
+          r2.className = "water-ripple water-ripple--echo";
+          r2.style.left = x + "px";
+          r2.style.top = y + "px";
+          surface.appendChild(r1);
+          surface.appendChild(r2);
+          window.setTimeout(function () {
+            r1.remove();
+            r2.remove();
+          }, 1500);
+        }
+
+        document.querySelectorAll(".ripple-surface").forEach(function (el) {
+          el.addEventListener(
+            "pointerdown",
+            function (e) {
+              if (e.button !== 0 && e.button !== undefined) return;
+              spawnRipple(el, e.clientX, e.clientY);
+            },
+            { passive: true }
+          );
+        });
       })();
     </script>
   </body>
