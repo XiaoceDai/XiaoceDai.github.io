@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Xiaoce Dai | Personal Research Homepage</title>
+    <title>Xiao-Ce Dai 戴小策 | Cardiovascular Research</title>
     <meta
       name="description"
-      content="Xiaoce Dai personal research homepage."
+      content="戴小策（Xiao-Ce Dai），浙江医院博士后。研究心房颤动、HFpEF、心血管代谢与血管新生，以及临床流行病学。代表性已发表论文与进行中的研究分开展示。"
     />
     <style>
       :root {
@@ -203,15 +203,20 @@
       .grid {
         display: grid;
         gap: 1rem;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
       }
 
       .card {
+        min-width: 0;
         background: var(--card);
         border: 1px solid var(--border);
         border-radius: 14px;
         padding: 1.1rem;
         backdrop-filter: blur(3px);
+      }
+
+      .card--wide {
+        grid-column: 1 / -1;
       }
 
       .card h2 {
@@ -227,8 +232,21 @@
         line-height: 1.65;
       }
 
+      .card li + li {
+        margin-top: 0.4rem;
+      }
+
+      .section-note {
+        margin: 0 0 1rem;
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.7;
+      }
+
       .paper {
-        margin: 0 0 0.8rem;
+        margin: 0 0 1.2rem;
+        line-height: 1.65;
+        overflow-wrap: anywhere;
       }
 
       .paper:last-child {
@@ -246,13 +264,41 @@
         font-size: 0.95rem;
       }
 
-      .contact a {
+      .card a {
         color: var(--accent);
         text-decoration: none;
+        overflow-wrap: anywhere;
       }
 
-      .contact a:hover {
+      .card a:hover {
         text-decoration: underline;
+      }
+
+      .card a:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+
+      .project h3 {
+        margin: 0 0 0.35rem;
+        color: #f0f6ff;
+        font-size: 1rem;
+      }
+
+      .project p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .project + .project {
+        margin-top: 1.1rem;
+      }
+
+      .project .status {
+        margin-bottom: 0.35rem;
+        color: var(--accent);
+        font-size: 0.9rem;
       }
 
       footer {
@@ -275,11 +321,12 @@
 
     <main class="container">
       <section class="hero ripple-surface">
-        <h1>Xiaoce Dai</h1>
-        <p class="subtitle">Personal Research Homepage</p>
+        <h1>Xiao-Ce Dai · 戴小策</h1>
+        <p class="subtitle">Cardiovascular Research · 浙江医院博士后</p>
         <p class="bio">
-          你好，我是 Xiaoce Dai。我的研究兴趣聚焦于人工智能、自然语言处理与数据挖掘，
-          关注模型在真实场景中的可解释性、稳健性与应用价值。
+          我是戴小策（Xiao-Ce Dai），浙江医院博士后，获浙江大学内科学（心血管疾病）博士学位。
+          我的研究聚焦房颤炎症与代谢性心房重构、HFpEF 心肌舒张机制，以及内皮代谢与血管新生；
+          同时结合人群队列、临床数据库和循证医学，研究生活方式、代谢因素与心血管结局。
         </p>
       </section>
 
@@ -287,40 +334,87 @@
         <article class="card ripple-surface">
           <h2>Research Interests</h2>
           <ul>
-            <li>Natural Language Processing (NLP)</li>
-            <li>Large Language Models and Reasoning</li>
-            <li>Data Mining and Knowledge Discovery</li>
-            <li>Trustworthy AI and Interpretability</li>
+            <li>心房颤动：炎症、纤维化与代谢性心房重构</li>
+            <li>心力衰竭与 HFpEF：钙处理、肌联蛋白及心肌能量代谢</li>
+            <li>内皮代谢与血管新生：谷氨酰胺代谢及己糖胺生物合成通路</li>
+            <li>临床流行病学：加速度计测量的身体活动、糖尿病与心血管结局</li>
+            <li>临床数据库与循证医学：心肾疾病、重症心血管疾病、孟德尔随机化与 Meta 分析</li>
           </ul>
-        </article>
-
-        <article class="card ripple-surface">
-          <h2>Selected Publications</h2>
-          <p class="paper">
-            <strong>Paper Title One</strong>
-            <span>Author A, Xiaoce Dai, Author C. Conference/Journal, 2025.</span>
-          </p>
-          <p class="paper">
-            <strong>Paper Title Two</strong>
-            <span>Xiaoce Dai, Author B. Conference/Journal, 2024.</span>
-          </p>
-          <p class="paper">
-            <strong>Paper Title Three</strong>
-            <span>Author A, Author B, Xiaoce Dai. Conference/Journal, 2023.</span>
-          </p>
         </article>
 
         <article class="card contact ripple-surface">
           <h2>Contact</h2>
           <ul>
-            <li>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></li>
+            <li>浙江医院 · 心血管内科 · 杭州，中国</li>
+            <li>Email: <a href="mailto:ielts_kris@163.com">ielts_kris@163.com</a></li>
+            <li>ORCID: <a href="https://orcid.org/0000-0002-2214-3251" rel="me">0000-0002-2214-3251</a></li>
             <li>GitHub: <a href="https://github.com/XiaoceDai">github.com/XiaoceDai</a></li>
-            <li>Google Scholar: <a href="#">Scholar Profile</a></li>
           </ul>
+        </article>
+
+        <article class="card card--wide ripple-surface" aria-labelledby="publications-heading">
+          <h2 id="publications-heading">Selected Publications · 已发表论文</h2>
+          <p class="section-note">以下为代表性已发表论文，含期刊在线发表版本；各条目均链接至 DOI。本人姓名加粗。</p>
+          <p class="paper" lang="en">
+            <strong><a href="https://doi.org/10.1186/s13293-026-00993-8">Evaluating sex as a modifier of cardiomyocyte relaxation in heart failure with preserved ejection fraction: calcium handling, titin, and bioenergetics.</a></strong>
+            <span>Wang B, <b>Dai XC</b>.<br />
+              <i>Biology of Sex Differences</i>. 2026. <span lang="zh-CN">在线发表 · 通讯作者</span></span>
+          </p>
+          <p class="paper" lang="en">
+            <strong><a href="https://doi.org/10.1186/s13062-026-00932-y">An ICAM1⁺ inflammatory fibroblast state in atrial fibrillation and metabolic-stress-associated atrial remodeling.</a></strong>
+            <span><b>Dai XC</b>, Pan YY, Liu SP, et al.<br />
+              <i>Biology Direct</i>. 2026. <span lang="zh-CN">在线发表 · 共同第一作者，排名第一</span></span>
+          </p>
+          <p class="paper" lang="en">
+            <strong><a href="https://doi.org/10.1186/s13040-024-00356-2">Assessment of the causal relationship between gut microbiota and cardiovascular diseases: a bidirectional Mendelian randomization analysis.</a></strong>
+            <span><b>Dai XC</b>, Yu Y, Zhou SY, Yu S, Xiang MX, Ma H.<br />
+              <i>BioData Mining</i>. 2024;17:6. <span lang="zh-CN">共同第一作者，排名第一</span></span>
+          </p>
+          <p class="paper" lang="en">
+            <strong><a href="https://doi.org/10.1001/jamainternmed.2022.4777">Unexpected Cause Behind Life-threatening ECG Changes—A Diagnostic Challenge.</a></strong>
+            <span>Wang H, Fan YW, <b>Dai XC</b>.<br />
+              <i>JAMA Internal Medicine</i>. 2023;183(1):72–73.</span>
+          </p>
+          <p class="paper" lang="en">
+            <strong><a href="https://doi.org/10.3389/fcvm.2022.932716">Association of admission hyperglycemia and all-cause mortality in acute myocardial infarction with percutaneous coronary intervention: A dose–response meta-analysis.</a></strong>
+            <span>Cheng SY, Wang H, Lin SH, Wen JH, Ma LL, <b>Dai XC</b>.<br />
+              <i>Frontiers in Cardiovascular Medicine</i>. 2022;9:932716.</span>
+          </p>
+          <p class="paper" lang="en">
+            <strong><a href="https://doi.org/10.1161/CIRCULATIONAHA.121.053765">Severe Arrhythmia Caused by a Chinese Herb Liquor: What Is the Diagnosis?</a></strong>
+            <span><b>Dai XC</b>, An ZY.<br />
+              <i>Circulation</i>. 2021;143(14):1450–1451.</span>
+          </p>
+          <p class="paper" lang="en">
+            <strong><a href="https://doi.org/10.1186/s12872-020-01354-y">Relationship between fluoroquinolones and the risk of aortic diseases: a meta-analysis of observational studies.</a></strong>
+            <span><b>Dai XC</b>, Yang XX, Ma L, Tang GM, Pan YY, Hu HL.<br />
+              <i>BMC Cardiovascular Disorders</i>. 2020;20:49. <span lang="zh-CN">共同第一作者，排名第一</span></span>
+          </p>
+        </article>
+
+        <article class="card card--wide ripple-surface" aria-labelledby="current-research-heading">
+          <h2 id="current-research-heading">Current Research · 修订中与进行中的研究</h2>
+          <p class="section-note">以下为尚未发表的研究，状态截至 2026 年 10 月 19 日。</p>
+          <div class="project">
+            <h3>加速度计身体活动与糖尿病心血管结局</h3>
+            <p class="status">稿件修订中 · 尚未发表</p>
+            <p lang="en">Weekly recurrence of multiple moderate-to-vigorous physical activity bouts and risks of death and cardiovascular events in type 2 diabetes.</p>
+            <p>基于 UK Biobank 与 NHANES，研究每周持续性 MVPA 的复现模式及其与死亡和心血管结局的关联。</p>
+          </div>
+          <div class="project">
+            <h3>内皮谷氨酰胺代谢与血管新生</h3>
+            <p class="status">研究进行中</p>
+            <p>研究 GLUL、己糖胺生物合成通路与 O-GlcNAc 修饰在内皮迁移、血管新生及心脏重构中的作用。</p>
+          </div>
+          <div class="project">
+            <h3>心血管疾病临床数据库研究</h3>
+            <p class="status">研究进行中</p>
+            <p>利用 MIMIC-IV 等临床数据库，围绕心力衰竭、急性肾损伤及重症心血管疾病开展临床结局与治疗策略研究。</p>
+          </div>
         </article>
       </section>
 
-      <footer>Last updated: March 2026</footer>
+      <footer>Last updated: <time datetime="2026-10-19">19 October 2026</time></footer>
       <p class="bottom-note">感谢我大哥王浩，一波666送给他</p>
     </main>
     <script>
