@@ -2,505 +2,375 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Xiao-Ce Dai 戴小策 | Cardiovascular Research</title>
-    <meta
-      name="description"
-      content="戴小策（Xiao-Ce Dai），浙江医院博士后。研究心房颤动、HFpEF、心血管代谢与血管新生，以及临床流行病学。代表性已发表论文与进行中的研究分开展示。"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>戴小策 Xiao-Ce Dai | Cardiovascular Research</title>
+    <meta name="description" content="戴小策（Xiao-Ce Dai），浙江医院博士后、浙江大学心血管内科学博士。研究房颤、HFpEF、内皮代谢与血管新生，以及身体活动和临床心血管结局。" />
+    <meta name="theme-color" content="#090f19" />
+    <link rel="canonical" href="https://daixc.cn/" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <style>
       :root {
-        --bg: #020207;
-        --card: rgba(255, 255, 255, 0.06);
-        --text: #f5f7ff;
-        --muted: #b6bfd8;
-        --accent: #79b8ff;
-        --border: rgba(255, 255, 255, 0.14);
+        color-scheme: dark;
+        --bg: #090f19;
+        --surface: #111b2a;
+        --surface-soft: #0e1725;
+        --text: #edf2f8;
+        --muted: #a4b1c3;
+        --accent: #a9c5df;
+        --line: #273449;
+        --font: Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
       }
-
-      * {
-        box-sizing: border-box;
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+      body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.7 var(--font); -webkit-font-smoothing: antialiased; }
+      body::before { content: ""; position: fixed; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 90% 0, #1b304648, transparent 55%), radial-gradient(ellipse at 0 50%, #1c304528, transparent 60%); }
+      a { color: inherit; text-decoration: none; }
+      button { font: inherit; }
+      button, a { -webkit-tap-highlight-color: transparent; }
+      a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+      button { cursor: pointer; }
+      ::selection { background: #7299be55; }
+      .skip-link { position: fixed; top: -80px; left: 20px; z-index: 30; background: #d9e7f4; color: #101a29; padding: 10px 20px; border-radius: 8px; }
+      .skip-link:focus { top: 12px; }
+      .site-header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid #d7e5ff0c; background: #090f19e8; backdrop-filter: blur(18px); }
+      .nav-inner { max-width: 1168px; min-height: 78px; margin: auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+      .brand { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 700; letter-spacing: .02em; white-space: nowrap; }
+      .brand-mark { width: 35px; height: 35px; display: grid; place-items: center; border: 1px solid #91b3d44d; border-radius: 10px; color: #c0d5e8; font-size: 12px; letter-spacing: .04em; }
+      .main-nav { display: flex; gap: 29px; align-items: center; }
+      .main-nav a { position: relative; padding: 25px 0; color: var(--muted); font-size: 13px; white-space: nowrap; transition: color .2s; }
+      .main-nav a:hover, .main-nav a[aria-current="location"] { color: #ecf4ff; }
+      .main-nav a[aria-current="location"]::after { content: ""; position: absolute; bottom: 15px; left: 0; right: 0; height: 2px; background: var(--accent); border-radius: 2px; }
+      .container { position: relative; z-index: 1; max-width: 1168px; padding: 0 24px; margin: auto; }
+      .hero { position: relative; margin: 42px 0 0; padding: 50px 54px 0; border: 1px solid #394a6077; border-radius: 24px; background: linear-gradient(115deg, #152236f7, #101a2bf5 64%, #142238f5); overflow: hidden; }
+      .hero::before { content: ""; position: absolute; width: 450px; height: 450px; border: 1px solid #b0c7df08; border-radius: 50%; top: -130px; right: -110px; box-shadow: 0 0 0 50px #b0c7df03, 0 0 0 100px #b0c7df02; pointer-events: none; }
+      .hero-main { display: grid; grid-template-columns: minmax(0, 1fr) 234px; gap: 58px; align-items: center; padding-bottom: 36px; }
+      .eyebrow { display: flex; align-items: center; gap: 9px; margin: 0 0 18px; color: #afc6dc; font-size: 11px; font-weight: 700; letter-spacing: .17em; }
+      .eyebrow::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: #b0c8dd; box-shadow: 0 0 12px #9dbbda50; }
+      h1 { margin: 0 0 17px; line-height: 1.15; font-size: clamp(38px, 4.7vw, 57px); letter-spacing: .05em; }
+      .name-en { display: block; margin-top: 10px; color: #d4dfec; font-size: clamp(21px, 2.5vw, 30px); font-weight: 400; letter-spacing: .01em; }
+      .affiliation { margin: 0 0 18px; color: #dee8f3; font-size: 14px; line-height: 1.9; }
+      .affiliation span { display: block; font-size: 12px; color: var(--muted); }
+      .bio { max-width: 600px; margin: 0; color: #aebcd0; font-size: 15px; line-height: 1.95; }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+      .button { min-height: 43px; display: inline-flex; align-items: center; justify-content: center; gap: 17px; padding: 10px 18px; border-radius: 8px; border: 1px solid #6b83a34d; color: #d4e1ef; font-size: 12px; font-weight: 600; transition: background .2s, transform .2s, border-color .2s; }
+      .button:hover { background: #b5cee915; border-color: #a5bfd880; transform: translateY(-2px); }
+      .button-primary { background: #bed1e3; color: #132034; border-color: #bed1e3; }
+      .button-primary:hover { background: #d6e3ef; color: #132034; }
+      .button svg { width: 14px; height: 14px; flex: none; }
+      .portrait { margin: 0; align-self: center; }
+      .portrait-frame { padding: 7px; background: #cad5df0b; border: 1px solid #99b3cf45; border-radius: 19px; box-shadow: 0 18px 40px #00000020; }
+      .portrait img { width: 100%; height: auto; aspect-ratio: 4 / 5; display: block; object-fit: cover; object-position: center 24%; border-radius: 12px; background: #fff; }
+      .portrait figcaption { display: flex; justify-content: space-between; margin-top: 10px; color: #899db5; font-size: 9px; letter-spacing: .07em; }
+      .hero-topics { display: flex; flex-wrap: wrap; gap: 12px 28px; padding: 19px 0; border-top: 1px solid #9eb8d520; color: #96abc2; font-size: 11px; letter-spacing: .04em; }
+      .hero-topics span { display: flex; align-items: center; gap: 10px; }
+      .hero-topics span::before { content: ""; width: 3px; height: 3px; border-radius: 50%; background: #6986a4; }
+      .content-section { padding-top: 66px; scroll-margin-top: 95px; }
+      .section-header { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 26px; }
+      .section-kicker { margin: 0 0 7px; color: #86a1bd; font-size: 10px; font-weight: 700; letter-spacing: .19em; text-transform: uppercase; }
+      h2 { margin: 0; font-size: clamp(22px, 3vw, 29px); line-height: 1.35; letter-spacing: .025em; font-weight: 600; }
+      .section-aside { margin: 0 0 2px; color: #8c9db3; font-size: 11px; text-align: right; }
+      .research-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+      .research-area { position: relative; padding: 26px 28px; border: 1px solid #243349; border-radius: 14px; background: #101a29ed; overflow: hidden; transition: border-color .25s, transform .25s; }
+      .research-area:hover { border-color: #627c99; transform: translateY(-3px); }
+      .area-top { display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+      .area-number { color: #819cb7; font-size: 11px; letter-spacing: .08em; }
+      .area-en { color: #70879f; font-size: 9px; letter-spacing: .06em; text-transform: uppercase; text-align: right; }
+      .research-area h3 { margin: 17px 0 9px; color: #dfe9f4; font-size: 18px; font-weight: 500; letter-spacing: .015em; }
+      .research-area p { max-width: 470px; margin: 0; color: #9babc0; font-size: 14px; line-height: 1.9; }
+      .section-description { max-width: 620px; margin: 12px 0 0; color: #92a3b9; font-size: 12px; }
+      .publications-panel { padding: 4px 32px 4px; background: #101927f5; border: 1px solid #27364a; border-radius: 16px; }
+      .publication-tools { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-bottom: 20px; }
+      .filters { display: flex; flex-wrap: wrap; gap: 6px; }
+      .filter { padding: 7px 14px; border: 1px solid transparent; border-radius: 7px; background: transparent; color: #94a7be; font-size: 11px; transition: background .2s; }
+      .filter:hover { color: #d8e5f2; background: #b8cbe712; }
+      .filter[aria-pressed="true"] { background: #a3bdd51a; border-color: #8daac944; color: #d4e3f1; }
+      .result-count { color: #8195ad; font-size: 11px; }
+      .paper { display: grid; grid-template-columns: 65px minmax(0, 1fr); gap: 22px; padding: 27px 0; border-bottom: 1px solid #233146; }
+      .paper[hidden] { display: none; }
+      .paper:last-child { border-bottom: none; }
+      .paper-year { padding-top: 2px; color: #b1c8df; font-size: 18px; font-weight: 400; font-variant-numeric: tabular-nums; }
+      .paper-year span { display: block; margin-top: 5px; color: #7189a2; font-size: 7px; letter-spacing: .11em; }
+      .paper-title { margin: 0 0 10px; font-size: 16px; font-weight: 500; line-height: 1.65; overflow-wrap: anywhere; }
+      .paper-title a { color: #e2eaf5; transition: color .2s; }
+      .paper-title a:hover { color: #9bc4ed; }
+      .paper-title a::after { content: " ↗"; color: #718ba6; font-size: 12px; white-space: nowrap; }
+      .paper-details { color: #8599b2; font-size: 12.5px; line-height: 1.85; }
+      .paper-details b { font-weight: 600; color: #b7c9dc; }
+      .paper-details i { font-style: normal; color: #adc0d6; }
+      .paper-details span[lang="zh-CN"] { margin-left: 8px; color: #87a8c8; font-size: 10px; }
+      .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+      .project { position: relative; overflow: hidden; padding: 29px; border: 1px solid #28394e; border-radius: 14px; background: #101b2aed; }
+      .project-featured { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 36px; border-color: #3b526d; background: linear-gradient(120deg, #16253af5, #111c2cf5); }
+      .project h3 { margin: 11px 0 10px; color: #e4edf6; font-size: 17px; font-weight: 500; }
+      .project p { margin: 0; color: #9bacc2; font-size: 13px; line-height: 1.9; }
+      .project .status { display: inline-flex; align-items: center; gap: 7px; color: #a7c3df; font-size: 10px; letter-spacing: .03em; }
+      .status::before { content: ""; width: 4px; height: 4px; background: #87a9c9; border-radius: 50%; }
+      .project .project-title-en { max-width: 680px; margin-bottom: 10px; color: #bfd0e2; font-size: 12px; line-height: 1.7; }
+      .project-link { display: flex; flex-direction: column; align-items: flex-start; gap: 9px; min-width: 165px; }
+      .project-link small { color: #718ca8; font-size: 9px; letter-spacing: .03em; }
+      .contact-section { margin-top: 66px; padding: 36px 40px; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 32px; border: 1px solid #2c3c51; border-radius: 16px; background: #111c2bed; }
+      .contact-section h2 { font-size: 24px; }
+      .contact-intro { max-width: 420px; margin: 14px 0 0; color: #93a6bd; font-size: 12px; line-height: 1.9; }
+      .contact-details { justify-self: end; }
+      .contact-email { display: inline-block; color: #d5e3f0; font-size: clamp(17px, 2.3vw, 25px); letter-spacing: .02em; overflow-wrap: anywhere; }
+      .contact-email:hover { color: #9bc4ed; }
+      .contact-links { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 14px; font-size: 11px; color: #a6bdd4; }
+      .contact-links a:hover { color: #e7f1fc; }
+      address { margin-top: 14px; color: #7088a2; font-size: 10px; font-style: normal; }
+      .site-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 27px 0 36px; color: #677e98; font-size: 10px; }
+      .meteor-shower { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; opacity: .27; }
+      .meteor { position: absolute; left: var(--left); top: var(--top); width: var(--width); height: var(--tail-length); border-radius: 999px; background: linear-gradient(to bottom, transparent, #91b2d455); filter: drop-shadow(0 0 5px #729cc544); animation: meteor-fall var(--duration) linear infinite; animation-delay: var(--delay); opacity: 0; }
+      .meteor::before { content: ""; position: absolute; bottom: 0; left: -1px; width: 3px; height: 3px; border-radius: 50%; background: #c1dbf4; box-shadow: 0 0 8px #9abfe5; }
+      @keyframes meteor-fall { 0% { transform: translate3d(0,0,0) rotate(var(--angle)); opacity: 0; } 10%, 70% { opacity: 1; } 100% { transform: translate3d(var(--drift-x),var(--fall-y),0) rotate(var(--angle)); opacity: 0; } }
+      .ripple-surface { position: relative; overflow: hidden; }
+      .ripple-surface > *:not(.water-ripple) { position: relative; z-index: 1; }
+      .water-ripple { position: absolute; left: 0; top: 0; width: 120px; height: 120px; border-radius: 50%; pointer-events: none; z-index: 0; transform: translate(-50%,-50%) scale(0); background: radial-gradient(circle, #afcde42b 0%, #8bb3da12 40%, transparent 72%); box-shadow: 0 0 0 1px #a1c3e222; animation: water-ripple 1.05s ease-out forwards; }
+      .water-ripple--echo { width: 100px; height: 100px; animation: water-ripple 1.35s .08s ease-out forwards; background: transparent; }
+      @keyframes water-ripple { from { transform: translate(-50%,-50%) scale(.05); opacity: .7; } to { transform: translate(-50%,-50%) scale(4.2); opacity: 0; } }
+      @media (min-width: 1500px) { .hero { margin-top: 56px; } }
+      @media (max-width: 850px) { .hero { padding: 36px 32px 0; } .hero-main { grid-template-columns: minmax(0,1fr) 190px; gap: 30px; } .hero-topics { gap: 12px 18px; } .project-featured { grid-template-columns: 1fr; gap: 21px; } .project-link { gap: 6px; } .contact-section { padding: 30px; gap: 25px; } }
+      @media (max-width: 620px) {
+        html { scroll-padding-top: 118px; }
+        .nav-inner { min-height: 0; padding: 14px 20px 0; flex-direction: column; align-items: flex-start; gap: 0; }
+        .brand { font-size: 13px; } .brand-mark { width: 29px; height: 29px; font-size: 10px; border-radius: 8px; }
+        .main-nav { width: 100%; justify-content: space-between; gap: 16px; overflow-x: auto; }
+        .main-nav a { padding: 14px 0 17px; font-size: 11px; } .main-nav a[aria-current="location"]::after { bottom: 9px; }
+        .container { padding: 0 19px; }
+        .hero { margin-top: 23px; padding: 27px 23px 0; border-radius: 18px; }
+        .hero-main { grid-template-columns: 1fr; gap: 0; padding-bottom: 27px; }
+        .hero-copy { display: contents; }
+        .eyebrow { grid-row: 1; font-size: 9px; margin-bottom: 20px; letter-spacing: .12em; }
+        h1 { grid-row: 2; padding-right: 105px; margin-bottom: 17px; font-size: 38px; min-height: 99px; }
+        .name-en { margin-top: 9px; font-size: 20px; letter-spacing: 0; }
+        .portrait { position: absolute !important; width: 95px; top: 30px; right: 0; }
+        .portrait-frame { padding: 4px; border-radius: 11px; } .portrait img { border-radius: 7px; }
+        .portrait figcaption { display: none; }
+        .affiliation { grid-row: 3; font-size: 12px; margin-bottom: 16px; } .affiliation span { font-size: 10px; }
+        .bio { grid-row: 4; font-size: 13.5px; line-height: 1.95; }
+        .hero-actions { grid-row: 5; margin-top: 23px; gap: 9px; }
+        .button { padding: 9px 14px; font-size: 11px; min-height: 40px; }
+        .hero-topics { gap: 10px 17px; font-size: 8px; padding: 16px 0; }
+        .hero-topics span { gap: 6px; }
+        .content-section { padding-top: 42px; }
+        .section-header { align-items: start; margin-bottom: 21px; gap: 16px; }
+        .section-kicker { font-size: 8px; margin-bottom: 6px; }
+        h2 { font-size: 23px; } .section-aside { font-size: 9px; max-width: 100px; }
+        .research-grid, .project-grid { grid-template-columns: 1fr; gap: 12px; }
+        .research-area { padding: 22px; } .research-area h3 { font-size: 17px; margin-top: 14px; }
+        .research-area p { font-size: 13px; } .area-en { font-size: 8px; }
+        .section-description { font-size: 10px; margin-top: 11px; }
+        .publications-panel { padding: 0 18px; border-radius: 13px; }
+        .publication-tools { margin-bottom: 15px; gap: 10px; }
+        .filter { font-size: 10px; padding: 7px 9px; } .result-count { font-size: 9px; }
+        .paper { grid-template-columns: 41px minmax(0,1fr); gap: 12px; padding: 23px 0; }
+        .paper-year { font-size: 15px; } .paper-year span { font-size: 5px; letter-spacing: .02em; }
+        .paper-title { font-size: 13.5px; line-height: 1.7; margin-bottom: 9px; }
+        .paper-details { font-size: 10.5px; line-height: 1.9; } .paper-details span[lang="zh-CN"] { font-size: 9px; margin-left: 3px; }
+        .project { padding: 23px; } .project h3 { font-size: 16px; } .project p, .project .project-title-en { font-size: 12px; }
+        .project .status { font-size: 9px; }
+        .contact-section { margin-top: 42px; padding: 26px 23px; grid-template-columns: 1fr; gap: 25px; }
+        .contact-details { justify-self: start; } .contact-email { font-size: 21px; }
+        .contact-section h2 { font-size: 23px; } .contact-intro { font-size: 11px; }
+        .site-footer { padding: 23px 0 27px; font-size: 9px; }
       }
-
-      body {
-        margin: 0;
-        min-height: 100vh;
-        overflow-x: hidden;
-        background: radial-gradient(circle at top, #0a1020 0%, var(--bg) 45%, #000 100%);
-        color: var(--text);
-        font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-      }
-
-      .meteor-shower {
-        position: fixed;
-        inset: 0;
-        z-index: 0;
-        pointer-events: none;
-        overflow: hidden;
-      }
-
-      .meteor {
-        position: absolute;
-        left: var(--left, 50vw);
-        top: var(--top, -18vh);
-        width: var(--width, 2px);
-        height: var(--tail-length, 90px);
-        border-radius: 999px;
-        background: linear-gradient(
-          to bottom,
-          rgba(255, 255, 255, 0) 0%,
-          var(--tail-mid-1, rgba(132, 207, 255, 0.55)) 35%,
-          var(--tail-mid-2, rgba(160, 122, 255, 0.85)) 65%,
-          var(--tail-end, rgba(255, 106, 173, 0.95)) 100%
-        );
-        filter: drop-shadow(0 0 10px rgba(121, 184, 255, 0.75));
-        transform: rotate(var(--angle, 35deg));
-        animation: meteor-fall var(--duration, 8s) linear infinite;
-        animation-delay: var(--delay, 0s);
-        opacity: 0;
-      }
-
-      .meteor::before {
-        content: "";
-        position: absolute;
-        top: -7px;
-        left: -4px;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: var(--planet-head, #d8ebff);
-        box-shadow: 0 0 16px rgba(177, 220, 255, 0.95);
-      }
-
-      @keyframes meteor-fall {
-        0% {
-          transform: translate3d(0, 0, 0) rotate(var(--angle, 35deg));
-          opacity: 0;
-        }
-        8% {
-          opacity: 1;
-        }
-        68% {
-          opacity: 1;
-        }
-        100% {
-          transform: translate3d(var(--drift-x, 30vw), var(--fall-y, 125vh), 0)
-            rotate(var(--angle, 35deg));
-          opacity: 0;
-        }
-      }
-
-      .container {
-        position: relative;
-        z-index: 1;
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 3.2rem 1.2rem 2.5rem;
-      }
-
-      .ripple-surface {
-        position: relative;
-        overflow: hidden;
-      }
-
-      .ripple-surface > *:not(.water-ripple) {
-        position: relative;
-        z-index: 1;
-      }
-
-      .water-ripple {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 120px;
-        height: 120px;
-        margin: 0;
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 0;
-        transform: translate(-50%, -50%) scale(0);
-        background: radial-gradient(
-          circle at 35% 35%,
-          rgba(160, 230, 255, 0.55) 0%,
-          rgba(100, 190, 255, 0.22) 38%,
-          rgba(80, 160, 255, 0.08) 55%,
-          transparent 72%
-        );
-        box-shadow:
-          0 0 0 1px rgba(140, 210, 255, 0.35),
-          0 0 24px rgba(100, 200, 255, 0.25),
-          inset 0 0 18px rgba(200, 240, 255, 0.15);
-        animation: water-ripple 1.05s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-      }
-
-      .water-ripple.water-ripple--echo {
-        width: 100px;
-        height: 100px;
-        animation-name: water-ripple-echo;
-        animation-duration: 1.35s;
-        animation-delay: 0.08s;
-        background: radial-gradient(
-          circle at 40% 40%,
-          transparent 40%,
-          rgba(120, 200, 255, 0.12) 58%,
-          rgba(120, 200, 255, 0.28) 100%
-        );
-        box-shadow: 0 0 0 1px rgba(140, 210, 255, 0.2);
-      }
-
-      @keyframes water-ripple {
-        0% {
-          transform: translate(-50%, -50%) scale(0.08);
-          opacity: 0.9;
-        }
-        45% {
-          opacity: 0.45;
-        }
-        100% {
-          transform: translate(-50%, -50%) scale(3.6);
-          opacity: 0;
-        }
-      }
-
-      @keyframes water-ripple-echo {
-        0% {
-          transform: translate(-50%, -50%) scale(0.05);
-          opacity: 0.55;
-        }
-        100% {
-          transform: translate(-50%, -50%) scale(4.2);
-          opacity: 0;
-        }
-      }
-
-      .hero {
-        margin-bottom: 1.6rem;
-        padding: 1.3rem 1.4rem;
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        backdrop-filter: blur(4px);
-      }
-
-      .hero h1 {
-        margin: 0 0 0.6rem;
-        font-size: clamp(1.9rem, 5.6vw, 2.9rem);
-        letter-spacing: 0.3px;
-      }
-
-      .hero .subtitle {
-        margin: 0;
-        color: var(--accent);
-        font-weight: 600;
-      }
-
-      .hero .bio {
-        margin: 0.8rem 0 0;
-        color: var(--muted);
-        line-height: 1.7;
-      }
-
-      .grid {
-        display: grid;
-        gap: 1rem;
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
-      }
-
-      .card {
-        min-width: 0;
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 14px;
-        padding: 1.1rem;
-        backdrop-filter: blur(3px);
-      }
-
-      .card--wide {
-        grid-column: 1 / -1;
-      }
-
-      .card h2 {
-        margin: 0 0 0.8rem;
-        font-size: 1.1rem;
-        color: #d7e8ff;
-      }
-
-      .card ul {
-        margin: 0;
-        padding-left: 1.05rem;
-        color: var(--muted);
-        line-height: 1.65;
-      }
-
-      .card li + li {
-        margin-top: 0.4rem;
-      }
-
-      .section-note {
-        margin: 0 0 1rem;
-        color: var(--muted);
-        font-size: 0.92rem;
-        line-height: 1.7;
-      }
-
-      .paper {
-        margin: 0 0 1.2rem;
-        line-height: 1.65;
-        overflow-wrap: anywhere;
-      }
-
-      .paper:last-child {
-        margin-bottom: 0;
-      }
-
-      .paper strong {
-        display: block;
-        margin-bottom: 0.25rem;
-        color: #f0f6ff;
-      }
-
-      .paper span {
-        color: var(--muted);
-        font-size: 0.95rem;
-      }
-
-      .card a {
-        color: var(--accent);
-        text-decoration: none;
-        overflow-wrap: anywhere;
-      }
-
-      .card a:hover {
-        text-decoration: underline;
-      }
-
-      .card a:focus-visible {
-        outline: 2px solid var(--accent);
-        outline-offset: 3px;
-      }
-
-      .project h3 {
-        margin: 0 0 0.35rem;
-        color: #f0f6ff;
-        font-size: 1rem;
-      }
-
-      .project p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.7;
-      }
-
-      .project + .project {
-        margin-top: 1.1rem;
-      }
-
-      .project .status {
-        margin-bottom: 0.35rem;
-        color: var(--accent);
-        font-size: 0.9rem;
-      }
-
-      footer {
-        margin-top: 1.8rem;
-        text-align: center;
-        color: #8f9cbc;
-        font-size: 0.9rem;
-      }
-
-      .bottom-note {
-        margin-top: 0.55rem;
-        text-align: center;
-        color: #c8d6fb;
-        font-size: 0.92rem;
-      }
+      @media (max-width: 360px) { .container { padding: 0 12px; } .hero { padding-left: 19px; padding-right: 19px; } .portrait { right: 0; width: 82px; } h1 { font-size: 33px; padding-right: 90px; } .name-en { font-size: 18px; } .main-nav { gap: 12px; } }
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } .meteor-shower, .water-ripple { display: none; } }
     </style>
   </head>
   <body>
+    <a class="skip-link" href="#about">跳转到正文</a>
     <div class="meteor-shower" aria-hidden="true"></div>
-
+    <header class="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="#about" aria-label="戴小策，返回简介"><span class="brand-mark" aria-hidden="true">XD</span><span>Xiao-Ce Dai</span></a>
+        <nav class="main-nav" aria-label="主导航">
+          <a href="#about" aria-current="location">关于</a>
+          <a href="#research">研究方向</a>
+          <a href="#publications">发表论文</a>
+          <a href="#projects">在研项目</a>
+          <a href="#contact">联系</a>
+        </nav>
+      </div>
+    </header>
     <main class="container">
-      <section class="hero ripple-surface">
-        <h1>Xiao-Ce Dai · 戴小策</h1>
-        <p class="subtitle">Cardiovascular Research · 浙江医院博士后</p>
-        <p class="bio">
-          我是戴小策（Xiao-Ce Dai），浙江医院博士后，获浙江大学内科学（心血管疾病）博士学位。
-          我的研究聚焦房颤炎症与代谢性心房重构、HFpEF 心肌舒张机制，以及内皮代谢与血管新生；
-          同时结合人群队列、临床数据库和循证医学，研究生活方式、代谢因素与心血管结局。
-        </p>
+      <section id="about" class="hero ripple-surface" aria-labelledby="profile-name">
+        <div class="hero-main">
+          <div class="hero-copy">
+            <p class="eyebrow">CARDIOVASCULAR MEDICINE &amp; RESEARCH</p>
+            <h1 id="profile-name">戴小策<span class="name-en" lang="en">Xiao-Ce Dai</span></h1>
+            <p class="affiliation">浙江医院 · 博士后<span>内科学（心血管疾病）博士 · 浙江大学</span></p>
+            <p class="bio">关注房颤炎症与代谢性心房重构、HFpEF 心肌舒张机制，以及内皮代谢与血管新生。结合人群队列、临床数据库与循证医学，研究生活方式、代谢因素与心血管结局。</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#publications">查看发表论文 <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 4v12m-5-5 5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <a class="button" href="mailto:ielts_kris@163.com">联系我 <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 15 15 5M5 5h10v10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+          <figure class="portrait">
+            <div class="portrait-frame"><img src="assets/xiaoce-dai.jpg" alt="戴小策（Xiao-Ce Dai）的个人照片" width="1280" height="1864" fetchpriority="high" decoding="async" /></div>
+            <figcaption><span>Cardiovascular Medicine</span><span>Hangzhou, China</span></figcaption>
+          </figure>
+        </div>
+        <div class="hero-topics" lang="en"><span>Atrial Fibrillation</span><span>Heart Failure</span><span>Cardiovascular Metabolism</span><span>Clinical Epidemiology</span></div>
       </section>
 
-      <section class="grid">
-        <article class="card ripple-surface">
-          <h2>Research Interests</h2>
-          <ul>
-            <li>心房颤动：炎症、纤维化与代谢性心房重构</li>
-            <li>心力衰竭与 HFpEF：钙处理、肌联蛋白及心肌能量代谢</li>
-            <li>内皮代谢与血管新生：谷氨酰胺代谢及己糖胺生物合成通路</li>
-            <li>临床流行病学：加速度计测量的身体活动、糖尿病与心血管结局</li>
-            <li>临床数据库与循证医学：心肾疾病、重症心血管疾病、孟德尔随机化与 Meta 分析</li>
-          </ul>
-        </article>
-
-        <article class="card contact ripple-surface">
-          <h2>Contact</h2>
-          <ul>
-            <li>浙江医院 · 心血管内科 · 杭州，中国</li>
-            <li>Email: <a href="mailto:ielts_kris@163.com">ielts_kris@163.com</a></li>
-            <li>ORCID: <a href="https://orcid.org/0000-0002-2214-3251" rel="me">0000-0002-2214-3251</a></li>
-            <li>GitHub: <a href="https://github.com/XiaoceDai">github.com/XiaoceDai</a></li>
-          </ul>
-        </article>
-
-        <article class="card card--wide ripple-surface" aria-labelledby="publications-heading">
-          <h2 id="publications-heading">Selected Publications · 已发表论文</h2>
-          <p class="section-note">以下为代表性已发表论文，含期刊在线发表版本；各条目均链接至 DOI。本人姓名加粗。</p>
-          <p class="paper" lang="en">
-            <strong><a href="https://doi.org/10.1186/s13293-026-00993-8">Evaluating sex as a modifier of cardiomyocyte relaxation in heart failure with preserved ejection fraction: calcium handling, titin, and bioenergetics.</a></strong>
-            <span>Wang B, <b>Dai XC</b>.<br />
-              <i>Biology of Sex Differences</i>. 2026. <span lang="zh-CN">在线发表 · 通讯作者</span></span>
-          </p>
-          <p class="paper" lang="en">
-            <strong><a href="https://doi.org/10.1186/s13062-026-00932-y">An ICAM1⁺ inflammatory fibroblast state in atrial fibrillation and metabolic-stress-associated atrial remodeling.</a></strong>
-            <span><b>Dai XC</b>, Pan YY, Liu SP, et al.<br />
-              <i>Biology Direct</i>. 2026. <span lang="zh-CN">在线发表 · 共同第一作者，排名第一</span></span>
-          </p>
-          <p class="paper" lang="en">
-            <strong><a href="https://doi.org/10.1186/s13040-024-00356-2">Assessment of the causal relationship between gut microbiota and cardiovascular diseases: a bidirectional Mendelian randomization analysis.</a></strong>
-            <span><b>Dai XC</b>, Yu Y, Zhou SY, Yu S, Xiang MX, Ma H.<br />
-              <i>BioData Mining</i>. 2024;17:6. <span lang="zh-CN">共同第一作者，排名第一</span></span>
-          </p>
-          <p class="paper" lang="en">
-            <strong><a href="https://doi.org/10.1001/jamainternmed.2022.4777">Unexpected Cause Behind Life-threatening ECG Changes—A Diagnostic Challenge.</a></strong>
-            <span>Wang H, Fan YW, <b>Dai XC</b>.<br />
-              <i>JAMA Internal Medicine</i>. 2023;183(1):72–73.</span>
-          </p>
-          <p class="paper" lang="en">
-            <strong><a href="https://doi.org/10.3389/fcvm.2022.932716">Association of admission hyperglycemia and all-cause mortality in acute myocardial infarction with percutaneous coronary intervention: A dose–response meta-analysis.</a></strong>
-            <span>Cheng SY, Wang H, Lin SH, Wen JH, Ma LL, <b>Dai XC</b>.<br />
-              <i>Frontiers in Cardiovascular Medicine</i>. 2022;9:932716.</span>
-          </p>
-          <p class="paper" lang="en">
-            <strong><a href="https://doi.org/10.1161/CIRCULATIONAHA.121.053765">Severe Arrhythmia Caused by a Chinese Herb Liquor: What Is the Diagnosis?</a></strong>
-            <span><b>Dai XC</b>, An ZY.<br />
-              <i>Circulation</i>. 2021;143(14):1450–1451.</span>
-          </p>
-          <p class="paper" lang="en">
-            <strong><a href="https://doi.org/10.1186/s12872-020-01354-y">Relationship between fluoroquinolones and the risk of aortic diseases: a meta-analysis of observational studies.</a></strong>
-            <span><b>Dai XC</b>, Yang XX, Ma L, Tang GM, Pan YY, Hu HL.<br />
-              <i>BMC Cardiovascular Disorders</i>. 2020;20:49. <span lang="zh-CN">共同第一作者，排名第一</span></span>
-          </p>
-        </article>
-
-        <article class="card card--wide ripple-surface" aria-labelledby="current-research-heading">
-          <h2 id="current-research-heading">Current Research · 修订中与进行中的研究</h2>
-          <p class="section-note">以下为尚未发表的研究，状态截至 2026 年 10 月 19 日。</p>
-          <div class="project">
-            <h3>加速度计身体活动与糖尿病心血管结局</h3>
-            <p class="status">稿件修订中 · 尚未发表</p>
-            <p lang="en">Weekly recurrence of multiple moderate-to-vigorous physical activity bouts and risks of death and cardiovascular events in type 2 diabetes.</p>
-            <p>基于 UK Biobank 与 NHANES，研究每周持续性 MVPA 的复现模式及其与死亡和心血管结局的关联。</p>
-          </div>
-          <div class="project">
-            <h3>内皮谷氨酰胺代谢与血管新生</h3>
-            <p class="status">研究进行中</p>
-            <p>研究 GLUL、己糖胺生物合成通路与 O-GlcNAc 修饰在内皮迁移、血管新生及心脏重构中的作用。</p>
-          </div>
-          <div class="project">
-            <h3>心血管疾病临床数据库研究</h3>
-            <p class="status">研究进行中</p>
-            <p>利用 MIMIC-IV 等临床数据库，围绕心力衰竭、急性肾损伤及重症心血管疾病开展临床结局与治疗策略研究。</p>
-          </div>
-        </article>
+      <section id="research" class="content-section" aria-labelledby="research-heading">
+        <div class="section-header"><div><p class="section-kicker">01 / Research Interests</p><h2 id="research-heading">研究方向</h2></div><p class="section-aside">从基础机制到临床结局</p></div>
+        <div class="research-grid">
+          <article class="research-area ripple-surface"><div class="area-top"><span class="area-number">01</span><span class="area-en" lang="en">Atrial Fibrillation</span></div><h3>心房颤动与心房重构</h3><p>聚焦炎症、纤维化与代谢应激，结合单细胞分析及实验研究，探索房颤相关的细胞状态与心房重构机制。</p></article>
+          <article class="research-area ripple-surface"><div class="area-top"><span class="area-number">02</span><span class="area-en" lang="en">Heart Failure &amp; HFpEF</span></div><h3>心力衰竭与舒张功能</h3><p>关注钙处理、肌联蛋白与心肌能量代谢，研究主动舒张、被动僵硬度及生物学性别对相关机制的影响。</p></article>
+          <article class="research-area ripple-surface"><div class="area-top"><span class="area-number">03</span><span class="area-en" lang="en">Endothelial Metabolism</span></div><h3>内皮代谢与血管新生</h3><p>围绕谷氨酰胺代谢、己糖胺生物合成与 O-GlcNAc 修饰，研究内皮迁移、血管新生及心脏重构。</p></article>
+          <article class="research-area ripple-surface"><div class="area-top"><span class="area-number">04</span><span class="area-en" lang="en">Clinical Epidemiology</span></div><h3>临床流行病学与循证医学</h3><p>利用加速度计、人群队列与临床数据库，研究身体活动、心肾疾病和心血管结局，并开展孟德尔随机化及 Meta 分析。</p></article>
+        </div>
       </section>
 
-      <footer>Last updated: <time datetime="2026-10-19">19 October 2026</time></footer>
+      <section id="publications" class="content-section" aria-labelledby="publications-heading">
+        <div class="section-header"><div><p class="section-kicker">02 / Selected Publications</p><h2 id="publications-heading">代表性论文</h2><p class="section-description">已发表论文，含期刊在线发表版本。点击题目可访问 DOI；本人姓名加粗。</p></div><p class="section-aside">2020 — 2026</p></div>
+        <div class="publication-tools">
+          <div class="filters" role="group" aria-label="按研究类型筛选论文">
+            <button class="filter" type="button" data-filter="all" aria-pressed="true">全部论文</button>
+            <button class="filter" type="button" data-filter="mechanisms" aria-pressed="false">机制与综述</button>
+            <button class="filter" type="button" data-filter="clinical" aria-pressed="false">临床与循证</button>
+          </div>
+          <span class="result-count" aria-live="polite">显示 7 篇论文</span>
+        </div>
+        <div class="publications-panel">
+            <article class="paper" data-category="mechanisms" lang="en">
+              <div class="paper-year">2026<span>ONLINE</span></div>
+              <div class="paper-main"><h3 class="paper-title"><a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1186/s13293-026-00993-8">Evaluating sex as a modifier of cardiomyocyte relaxation in heart failure with preserved ejection fraction: calcium handling, titin, and bioenergetics.</a></h3>
+                <div class="paper-details"><span>Wang B, <b>Dai XC</b>.<br />
+              <i>Biology of Sex Differences</i>. 2026. <span lang="zh-CN">在线发表 · 通讯作者</span></span></div>
+              </div>
+            </article>
+            <article class="paper" data-category="mechanisms" lang="en">
+              <div class="paper-year">2026<span>ONLINE</span></div>
+              <div class="paper-main"><h3 class="paper-title"><a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1186/s13062-026-00932-y">An ICAM1⁺ inflammatory fibroblast state in atrial fibrillation and metabolic-stress-associated atrial remodeling.</a></h3>
+                <div class="paper-details"><span><b>Dai XC</b>, Pan YY, Liu SP, et al.<br />
+              <i>Biology Direct</i>. 2026. <span lang="zh-CN">在线发表 · 共同第一作者，排名第一</span></span></div>
+              </div>
+            </article>
+            <article class="paper" data-category="clinical" lang="en">
+              <div class="paper-year">2024<span>PUBLISHED</span></div>
+              <div class="paper-main"><h3 class="paper-title"><a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1186/s13040-024-00356-2">Assessment of the causal relationship between gut microbiota and cardiovascular diseases: a bidirectional Mendelian randomization analysis.</a></h3>
+                <div class="paper-details"><span><b>Dai XC</b>, Yu Y, Zhou SY, Yu S, Xiang MX, Ma H.<br />
+              <i>BioData Mining</i>. 2024;17:6. <span lang="zh-CN">共同第一作者，排名第一</span></span></div>
+              </div>
+            </article>
+            <article class="paper" data-category="clinical" lang="en">
+              <div class="paper-year">2023<span>PUBLISHED</span></div>
+              <div class="paper-main"><h3 class="paper-title"><a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1001/jamainternmed.2022.4777">Unexpected Cause Behind Life-threatening ECG Changes—A Diagnostic Challenge.</a></h3>
+                <div class="paper-details"><span>Wang H, Fan YW, <b>Dai XC</b>.<br />
+              <i>JAMA Internal Medicine</i>. 2023;183(1):72–73.</span></div>
+              </div>
+            </article>
+            <article class="paper" data-category="clinical" lang="en">
+              <div class="paper-year">2022<span>PUBLISHED</span></div>
+              <div class="paper-main"><h3 class="paper-title"><a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.3389/fcvm.2022.932716">Association of admission hyperglycemia and all-cause mortality in acute myocardial infarction with percutaneous coronary intervention: A dose–response meta-analysis.</a></h3>
+                <div class="paper-details"><span>Cheng SY, Wang H, Lin SH, Wen JH, Ma LL, <b>Dai XC</b>.<br />
+              <i>Frontiers in Cardiovascular Medicine</i>. 2022;9:932716.</span></div>
+              </div>
+            </article>
+            <article class="paper" data-category="clinical" lang="en">
+              <div class="paper-year">2021<span>PUBLISHED</span></div>
+              <div class="paper-main"><h3 class="paper-title"><a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1161/CIRCULATIONAHA.121.053765">Severe Arrhythmia Caused by a Chinese Herb Liquor: What Is the Diagnosis?</a></h3>
+                <div class="paper-details"><span><b>Dai XC</b>, An ZY.<br />
+              <i>Circulation</i>. 2021;143(14):1450–1451.</span></div>
+              </div>
+            </article>
+            <article class="paper" data-category="clinical" lang="en">
+              <div class="paper-year">2020<span>PUBLISHED</span></div>
+              <div class="paper-main"><h3 class="paper-title"><a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1186/s12872-020-01354-y">Relationship between fluoroquinolones and the risk of aortic diseases: a meta-analysis of observational studies.</a></h3>
+                <div class="paper-details"><span><b>Dai XC</b>, Yang XX, Ma L, Tang GM, Pan YY, Hu HL.<br />
+              <i>BMC Cardiovascular Disorders</i>. 2020;20:49. <span lang="zh-CN">共同第一作者，排名第一</span></span></div>
+              </div>
+            </article>
+        </div>
+      </section>
+
+      <section id="projects" class="content-section" aria-labelledby="projects-heading">
+        <div class="section-header"><div><p class="section-kicker">03 / Current Research</p><h2 id="projects-heading">正在推进的研究</h2><p class="section-description">以下为尚未发表的研究；项目状态截至 2026 年 10 月 19 日。</p></div></div>
+        <div class="project-grid">
+          <article class="project project-featured ripple-surface">
+            <div><p class="status">稿件修订中 · 尚未发表</p><h3>加速度计身体活动与糖尿病心血管结局</h3><p class="project-title-en" lang="en">Weekly recurrence of multiple moderate-to-vigorous physical activity bouts and risks of death and cardiovascular events in type 2 diabetes.</p><p>基于 UK Biobank 与 NHANES，研究每周持续性 MVPA 的复现模式及其与死亡和心血管结局的关联。</p></div>
+            <div class="project-link"><a class="button" href="https://movementevidence.com/" target="_blank" rel="noopener noreferrer">研究数据展示 <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 15 15 5M5 5h10v10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><small lang="en">movementevidence.com</small></div>
+          </article>
+          <article class="project ripple-surface"><p class="status">研究进行中</p><h3>内皮谷氨酰胺代谢与血管新生</h3><p>研究 GLUL、己糖胺生物合成通路与 O-GlcNAc 修饰在内皮迁移、血管新生及心脏重构中的作用。</p></article>
+          <article class="project ripple-surface"><p class="status">研究进行中</p><h3>心血管疾病临床数据库研究</h3><p>利用 MIMIC-IV 等临床数据库，围绕心力衰竭、急性肾损伤及重症心血管疾病开展临床结局与治疗策略研究。</p></article>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section ripple-surface" aria-labelledby="contact-heading">
+        <div><p class="section-kicker">04 / Contact</p><h2 id="contact-heading">交流与合作</h2><p class="contact-intro">欢迎围绕心血管基础机制、临床队列与循证研究交流。</p></div>
+        <div class="contact-details"><a class="contact-email" href="mailto:ielts_kris@163.com">ielts_kris@163.com <span aria-hidden="true">↗</span></a><div class="contact-links"><a href="https://orcid.org/0000-0002-2214-3251" target="_blank" rel="me noopener noreferrer">ORCID <span aria-hidden="true">↗</span></a><a href="https://github.com/XiaoceDai" target="_blank" rel="me noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div><address>浙江医院 · 心血管内科 · 杭州，中国</address></div>
+      </section>
+      <footer class="site-footer"><span>© 2026 Xiao-Ce Dai · 戴小策</span><span>Last updated: <time datetime="2026-10-19">19 October 2026</time></span></footer>
     </main>
     <script>
       (function () {
-        var shower = document.querySelector(".meteor-shower");
-        if (!shower) return;
-
-        var meteorCount = 188;
-        var headColors = [
-          "#e8f5ff",
-          "#d4eaff",
-          "#d2ceff",
-          "#ffd1ea",
-          "#c8f2ff",
-          "#f5d3ff",
-          "#ffe3d9"
-        ];
-        var tailPalettes = [
-          ["rgba(132, 207, 255, 0.55)", "rgba(160, 122, 255, 0.85)", "rgba(255, 106, 173, 0.95)"],
-          ["rgba(117, 229, 255, 0.5)", "rgba(140, 166, 255, 0.82)", "rgba(229, 128, 255, 0.95)"],
-          ["rgba(153, 223, 255, 0.52)", "rgba(121, 180, 255, 0.84)", "rgba(255, 158, 120, 0.95)"]
-        ];
-
-        for (var i = 0; i < meteorCount; i += 1) {
-          var meteor = document.createElement("span");
-          meteor.className = "meteor";
-
-          var palette = tailPalettes[Math.floor(Math.random() * tailPalettes.length)];
-          var left = Math.random() * 110 - 5;
-          var top = Math.random() * -90 - 5;
-          var duration = 4 + Math.random() * 8;
-          var delay = -Math.random() * 14;
-          var angle = 24 + Math.random() * 28;
-          var driftX = 18 + Math.random() * 40;
-          var fallY = 110 + Math.random() * 30;
-          var tailLength = 70 + Math.random() * 80;
-          var width = 1.2 + Math.random() * 2.6;
-
-          meteor.style.setProperty("--left", left.toFixed(2) + "vw");
-          meteor.style.setProperty("--top", top.toFixed(2) + "vh");
-          meteor.style.setProperty("--duration", duration.toFixed(2) + "s");
-          meteor.style.setProperty("--delay", delay.toFixed(2) + "s");
-          meteor.style.setProperty("--angle", angle.toFixed(2) + "deg");
-          meteor.style.setProperty("--drift-x", driftX.toFixed(2) + "vw");
-          meteor.style.setProperty("--fall-y", fallY.toFixed(2) + "vh");
-          meteor.style.setProperty("--tail-length", tailLength.toFixed(2) + "px");
-          meteor.style.setProperty("--width", width.toFixed(2) + "px");
-          meteor.style.setProperty("--planet-head", headColors[Math.floor(Math.random() * headColors.length)]);
-          meteor.style.setProperty("--tail-mid-1", palette[0]);
-          meteor.style.setProperty("--tail-mid-2", palette[1]);
-          meteor.style.setProperty("--tail-end", palette[2]);
-
-          shower.appendChild(meteor);
+        var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var shower = document.querySelector('.meteor-shower');
+        if (!reducedMotion && shower) {
+          var meteorCount = window.matchMedia('(max-width: 620px)').matches ? 10 : 24;
+          for (var i = 0; i < meteorCount; i += 1) {
+            var meteor = document.createElement('span');
+            meteor.className = 'meteor';
+            meteor.style.setProperty('--left', (Math.random() * 110 - 5).toFixed(2) + 'vw');
+            meteor.style.setProperty('--top', (-Math.random() * 80 - 10).toFixed(2) + 'vh');
+            meteor.style.setProperty('--duration', (9 + Math.random() * 9).toFixed(2) + 's');
+            meteor.style.setProperty('--delay', (-Math.random() * 22).toFixed(2) + 's');
+            meteor.style.setProperty('--angle', (28 + Math.random() * 14).toFixed(2) + 'deg');
+            meteor.style.setProperty('--drift-x', (22 + Math.random() * 24).toFixed(2) + 'vw');
+            meteor.style.setProperty('--fall-y', (115 + Math.random() * 20).toFixed(2) + 'vh');
+            meteor.style.setProperty('--tail-length', (45 + Math.random() * 50).toFixed(2) + 'px');
+            meteor.style.setProperty('--width', (.6 + Math.random() * .5).toFixed(2) + 'px');
+            shower.appendChild(meteor);
+          }
         }
-      })();
-
-      (function () {
-        function spawnRipple(surface, clientX, clientY) {
-          var rect = surface.getBoundingClientRect();
-          var x = clientX - rect.left;
-          var y = clientY - rect.top;
-          var r1 = document.createElement("span");
-          r1.className = "water-ripple";
-          r1.style.left = x + "px";
-          r1.style.top = y + "px";
-          var r2 = document.createElement("span");
-          r2.className = "water-ripple water-ripple--echo";
-          r2.style.left = x + "px";
-          r2.style.top = y + "px";
-          surface.appendChild(r1);
-          surface.appendChild(r2);
-          window.setTimeout(function () {
-            r1.remove();
-            r2.remove();
-          }, 1500);
+        if (!reducedMotion) {
+          document.querySelectorAll('.ripple-surface').forEach(function (surface) {
+            surface.addEventListener('pointerdown', function (event) {
+              if (event.button !== 0 && event.button !== undefined) return;
+              var rect = surface.getBoundingClientRect();
+              var ripples = ['', ' water-ripple--echo'].map(function (suffix) {
+                var ripple = document.createElement('span');
+                ripple.className = 'water-ripple' + suffix;
+                ripple.setAttribute('aria-hidden', 'true');
+                ripple.style.left = event.clientX - rect.left + 'px';
+                ripple.style.top = event.clientY - rect.top + 'px';
+                surface.appendChild(ripple);
+                return ripple;
+              });
+              window.setTimeout(function () { ripples.forEach(function (ripple) { ripple.remove(); }); }, 1500);
+            }, { passive: true });
+          });
         }
-
-        document.querySelectorAll(".ripple-surface").forEach(function (el) {
-          el.addEventListener(
-            "pointerdown",
-            function (e) {
-              if (e.button !== 0 && e.button !== undefined) return;
-              spawnRipple(el, e.clientX, e.clientY);
-            },
-            { passive: true }
-          );
+        var filters = document.querySelectorAll('[data-filter]');
+        var papers = document.querySelectorAll('.paper');
+        var counter = document.querySelector('.result-count');
+        filters.forEach(function (button) {
+          button.addEventListener('click', function () {
+            var filter = button.dataset.filter;
+            filters.forEach(function (item) { item.setAttribute('aria-pressed', String(item === button)); });
+            var count = 0;
+            papers.forEach(function (paper) {
+              paper.hidden = filter !== 'all' && paper.dataset.category !== filter;
+              if (!paper.hidden) count += 1;
+            });
+            counter.textContent = '显示 ' + count + ' 篇论文';
+          });
         });
+        var links = document.querySelectorAll('.main-nav a');
+        if ('IntersectionObserver' in window) {
+          var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (!entry.isIntersecting) return;
+              links.forEach(function (link) {
+                if (link.hash === '#' + entry.target.id) link.setAttribute('aria-current', 'location');
+                else link.removeAttribute('aria-current');
+              });
+            });
+          }, { rootMargin: '-12% 0px -58% 0px', threshold: 0 });
+          document.querySelectorAll('main > section[id]').forEach(function (section) { observer.observe(section); });
+        }
       })();
     </script>
   </body>
