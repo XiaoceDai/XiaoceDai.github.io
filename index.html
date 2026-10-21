@@ -175,6 +175,120 @@
       }
       @media (max-width: 360px) { .container { padding: 0 12px; } .hero { padding-left: 19px; padding-right: 19px; } .portrait { right: 0; width: 82px; } h1 { font-size: 33px; padding-right: 90px; } .name-en { font-size: 18px; } .main-nav { gap: 12px; } }
       @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } .meteor-shower, .water-ripple { display: none; } }
+
+      /* Academic profile: editorial spacing, consistent citations and clear manuscript status. */
+      :root { --bg:#0a101b; --text:#edf2f7; --muted:#acb8c8; --accent:#b0c8df; --line:#2b384b; }
+      body::before { background:radial-gradient(ellipse at 85% 0,#24415b32,transparent 48%),radial-gradient(ellipse at 5% 62%,#24385218,transparent 55%); }
+      .nav-inner,.container { max-width:1200px; }
+      .brand-mark { border-radius:50%; width:36px; height:36px; background:#a7bed40a; }
+      .main-nav a { font-size:13px; }
+      .nav-count { margin-left:6px; padding:2px 5px; border-radius:4px; font-size:9px; background:#a7bed417; color:#bfd2e5; }
+      .hero { margin-top:30px; padding:42px 0 0; border:0; border-radius:0; background:transparent; }
+      .hero::before { display:none; }
+      .hero-main { grid-template-columns:minmax(0,1fr) 258px; gap:76px; padding-bottom:37px; }
+      .eyebrow { margin-bottom:22px; color:#92adc7; font-size:10px; letter-spacing:.18em; }
+      h1 { margin-bottom:25px; font-size:clamp(44px,5.5vw,68px); font-weight:600; letter-spacing:.055em; }
+      .name-en { margin-top:13px; font-size:29px; letter-spacing:.02em; color:#c5d3e3; }
+      .affiliation { font-size:15px; color:#e2eaf3; margin-bottom:22px; }
+      .affiliation span { font-size:12px; color:#9faec2; }
+      .affiliation .mentor { color:#8198b1; margin-top:3px; font-size:11px; }
+      .bio { max-width:690px; font-size:15.5px; color:#acb9ca; line-height:1.95; }
+      .hero-actions { margin-top:27px; }
+      .button { border-radius:7px; padding:11px 19px; font-size:12px; min-height:44px; }
+      .button-primary { background:#c6d8e8; border-color:#c6d8e8; }
+      .portrait-frame { padding:5px; border-color:#718aa64d; border-radius:17px; background:#b1c8df09; box-shadow:0 20px 50px #0003; }
+      .portrait img { border-radius:11px; }
+      .portrait figcaption { font-size:9px; color:#8ba2bb; margin-top:13px; }
+      .hero-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:20px 0; }
+      .hero-topics { padding:0; border:0; gap:9px 20px; font-size:10px; }
+      .publication-tally { display:flex; gap:24px; align-items:center; }
+      .publication-tally a { display:flex; align-items:baseline; gap:7px; }
+      .publication-tally b { color:#d1e1ef; font-size:25px; line-height:1; font-weight:400; font-variant-numeric:tabular-nums; }
+      .publication-tally span { color:#92a7bd; font-size:10px; }
+      .content-section { margin-top:76px; }
+      .section-kicker { font-size:10px; color:#839bb4; }
+      h2 { font-size:30px; font-weight:500; letter-spacing:.03em; }
+      .section-header { margin-bottom:30px; }
+      .section-description { font-size:13px; color:#93a6bd; max-width:780px; line-height:1.9; }
+      .research-grid { gap:0 42px; }
+      .research-area { border:0; border-top:1px solid #2b394d; border-radius:0; background:transparent; padding:25px 0 29px; }
+      .research-area:hover { border-color:#819ab4; transform:none; background:linear-gradient(90deg,#17283b26,transparent); }
+      .area-number { font-size:14px; color:#819ab4; font-variant-numeric:tabular-nums; }
+      .area-en { font-size:9px; color:#8197af; }
+      .research-area h3 { font-size:21px; margin-top:14px; margin-bottom:11px; }
+      .research-area p { font-size:14px; color:#9fafc3; line-height:1.95; }
+      .publications-panel { border:0; border-radius:0; padding:0; background:transparent; }
+      .publication-tools { gap:14px; margin-bottom:24px; padding-bottom:18px; border-bottom:1px solid var(--line); }
+      .filters { gap:6px; }
+      .filter { font-size:12px; padding:8px 13px; border-radius:6px; }
+      .filter-count { display:inline-block; margin-left:8px; color:#7f97b1; font-size:10px; }
+      .filter[aria-pressed="true"] .filter-count { color:#d4e3f0; }
+      .result-count { font-size:11px; color:#92a7bd; }
+      .publication-year-group { display:grid; grid-template-columns:82px minmax(0,1fr); gap:31px; margin-bottom:26px; }
+      .publication-year-group[hidden] { display:none; }
+      .year-label { position:sticky; top:108px; align-self:start; padding-top:16px; color:#afc9df; }
+      .year-label>span { font-size:27px; font-weight:400; letter-spacing:-.02em; }
+      .year-label small { display:block; margin-top:3px; font-size:9px; color:#7e95af; }
+      .year-papers { border-top:1px solid var(--line); min-width:0; }
+      .paper { display:block; padding:23px 0 26px; border-bottom:1px solid #263447; }
+      .paper[hidden] { display:none; }
+      .paper-labels { display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:9px; font-size:10px; line-height:1.7; }
+      .paper-type { color:#93a9c0; }
+      .paper-role { color:#a0bdd7; }
+      .paper-title { margin:0 0 11px; font-size:16.5px; line-height:1.65; font-weight:500; }
+      .paper-title a { color:#e3ebf4; }
+      .paper-title a:hover { color:#b2d1ed; }
+      .paper-title a::after { color:#7f9ab6; }
+      .paper-authors { margin:0 0 4px; font-size:12px; color:#97a9bf; line-height:1.85; }
+      .paper-authors b { color:#cedcea; font-weight:600; }
+      .paper-citation { display:flex; flex-wrap:wrap; align-items:baseline; gap:7px; margin:0; color:#839ab3; font-size:12px; line-height:1.8; }
+      .paper-journal { color:#aec4d9; }
+      .citation-separator { color:#52677e; }
+      .project-grid { gap:18px; }
+      .project { border-color:#2c3c51; border-radius:12px; background:#111b29eb; padding:29px; }
+      .project-featured { display:block; padding:36px; background:linear-gradient(120deg,#1b2b40f5,#111c2bf5); border-color:#60799377; }
+      .manuscript-kicker { color:#94aec7!important; font-size:9px!important; letter-spacing:.16em; margin-bottom:14px!important; }
+      .revision-header { display:flex; flex-wrap:wrap; align-items:center; gap:12px; }
+      .revision-journal { font-size:24px; line-height:1.5; font-weight:400; color:#e0eaf3; }
+      .revision-badge { padding:3px 10px; border:1px solid #c3b38c66; border-radius:5px; background:#b8a77914; color:#d2c398; font-size:11px; white-space:nowrap; }
+      .manuscript-card h3 { margin-top:24px; margin-bottom:12px; font-size:19px; color:#d4e2ee; }
+      .project .project-title-en { max-width:900px; font-size:13.5px; color:#acbfd3; line-height:1.85; margin-bottom:14px; }
+      .manuscript-footer { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:22px; margin-top:25px; padding-top:22px; border-top:1px solid #6a819a33; }
+      .manuscript-footer>span { color:#b6a987; font-size:11px; }
+      .project-link { flex-direction:row; align-items:center; gap:14px; }
+      .project-link small { font-size:10px; }
+      #ncr-manuscript { scroll-margin-top:110px; }
+      .contact-section { margin-top:76px; border:0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); border-radius:0; padding:38px 0; background:transparent; }
+      .contact-intro { font-size:13px; }
+      .contact-email { font-size:25px; }
+      .contact-links { font-size:12px; }
+      address { font-size:11px; }
+      .meteor-shower { opacity:.17; }
+      @media (max-width:850px) {
+        .hero { padding:30px 0 0; }.hero-main { grid-template-columns:minmax(0,1fr) 205px; gap:35px; }
+        h1 { font-size:53px; }.name-en { font-size:25px; }.bio { font-size:14px; }
+        .hero-bottom { align-items:flex-start; gap:19px; }.publication-tally { gap:25px; }
+        .project-featured { padding:29px; }.revision-journal { font-size:21px; }
+      }
+      @media (max-width:620px) {
+        .nav-inner { padding:13px 20px 0; }.main-nav { gap:11px; }.main-nav a { font-size:11px; }.nav-count { font-size:8px; margin-left:3px; }
+        .hero { margin-top:20px; padding:24px 0 0; }.hero-main { grid-template-columns:1fr; gap:0; padding-bottom:28px; }
+        .eyebrow { max-width:100%; font-size:8px; letter-spacing:.11em; margin-bottom:22px; }
+        h1 { font-size:43px; padding-right:116px; min-height:110px; margin-bottom:19px; }.name-en { font-size:21px; margin-top:13px; }
+        .portrait { width:101px; top:38px; right:0; }.portrait-frame { border-radius:12px; padding:4px; }.portrait img { border-radius:7px; }
+        .affiliation { font-size:13px; margin-bottom:20px; }.affiliation span { font-size:10px; }.affiliation .mentor { font-size:10px; }
+        .bio { font-size:14px; line-height:1.95; }.hero-actions { margin-top:22px; }.button { font-size:11px; min-height:43px; padding:10px 15px; }
+        .hero-bottom { gap:18px; padding:18px 0; }.hero-topics { font-size:8px; gap:8px 13px; }.publication-tally { width:100%; justify-content:flex-start; gap:29px; }.publication-tally b { font-size:23px; }.publication-tally span { font-size:9px; }
+        .content-section { margin-top:52px; }.section-header { margin-bottom:24px; }.section-kicker { font-size:8px; }h2 { font-size:24px; }.section-description { font-size:11px; }
+        .research-grid { gap:0; }.research-area { padding:23px 0 26px; }.research-area h3 { font-size:19px; }.research-area p { font-size:13.5px; }.area-en { font-size:8px; }
+        .filters { gap:5px; }.filter { font-size:10px; padding:7px 9px; }.filter-count { font-size:9px; margin-left:5px; }.result-count { font-size:10px; }
+        .publication-year-group { grid-template-columns:1fr; gap:0; margin-bottom:21px; }.year-label { position:static; display:flex; align-items:baseline; gap:10px; padding:4px 0 12px; }.year-label>span { font-size:24px; }.year-label small { font-size:9px; margin:0; }
+        .paper { padding:22px 0; }.paper-labels { font-size:9px; gap:5px 12px; margin-bottom:8px; }.paper-title { font-size:14px; line-height:1.75; }.paper-authors,.paper-citation { font-size:11px; line-height:1.85; }
+        .project,.project-featured { padding:23px; }.manuscript-kicker { font-size:8px!important; }.revision-journal { font-size:19px; }.revision-badge { font-size:10px; }.manuscript-card h3 { font-size:17px; margin-top:20px; }.project .project-title-en { font-size:12px; }.project p { font-size:12px; }
+        .manuscript-footer { gap:16px; margin-top:21px; padding-top:19px; }.manuscript-footer>span { font-size:10px; }.project-link { align-items:flex-start; flex-direction:column; gap:8px; }.project-link small { font-size:9px; }
+        .contact-section { margin-top:52px; padding:30px 0; gap:23px; }.contact-intro { font-size:12px; }.contact-email { font-size:21px; }.contact-links { font-size:11px; }
+      }
+      @media(max-width:360px) { h1 { font-size:37px; padding-right:99px; }.name-en { font-size:19px; }.portrait { width:88px; }.publication-tally { gap:18px; }.publication-tally span { font-size:8px; } }
     </style>
   </head>
   <body>
@@ -186,7 +300,7 @@
         <nav class="main-nav" aria-label="主导航">
           <a href="#about" aria-current="location">关于</a>
           <a href="#research">研究方向</a>
-          <a href="#publications">发表论文</a>
+          <a href="#publications">发表论文<span class="nav-count" data-publication-total>10</span></a>
           <a href="#projects">在研项目</a>
           <a href="#contact">联系</a>
         </nav>
@@ -196,9 +310,9 @@
       <section id="about" class="hero ripple-surface" aria-labelledby="profile-name">
         <div class="hero-main">
           <div class="hero-copy">
-            <p class="eyebrow">CARDIOVASCULAR MEDICINE &amp; RESEARCH</p>
+            <p class="eyebrow">CLINICIAN &amp; CARDIOVASCULAR RESEARCHER</p>
             <h1 id="profile-name">戴小策<span class="name-en" lang="en">Xiao-Ce Dai</span></h1>
-            <p class="affiliation">浙江医院 · 博士后<span>内科学（心血管疾病）博士 · 浙江大学</span></p>
+            <p class="affiliation">浙江医院 · 博士后<span>内科学（心血管疾病）博士 · 浙江大学</span><span class="mentor">博士后合作导师：程洪强教授</span></p>
             <p class="bio">关注房颤炎症与代谢性心房重构、HFpEF 心肌舒张机制，以及内皮代谢与血管新生。结合人群队列、临床数据库与循证医学，研究生活方式、代谢因素与心血管结局。</p>
             <div class="hero-actions">
               <a class="button button-primary" href="#publications">查看发表论文 <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 4v12m-5-5 5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -210,7 +324,10 @@
             <figcaption><span>Cardiovascular Medicine</span><span>Hangzhou, China</span></figcaption>
           </figure>
         </div>
-        <div class="hero-topics" lang="en"><span>Atrial Fibrillation</span><span>Heart Failure</span><span>Cardiovascular Metabolism</span><span>Clinical Epidemiology</span></div>
+        <div class="hero-bottom">
+          <div class="hero-topics" lang="en"><span>Atrial Fibrillation</span><span>Heart Failure</span><span>Cardiovascular Metabolism</span><span>Clinical Epidemiology</span></div>
+          <div class="publication-tally"><a href="#publications"><b data-publication-total>10</b><span>篇代表性已发表论文</span></a><a href="#ncr-manuscript"><b>1</b><span>篇稿件修订中</span></a></div>
+        </div>
       </section>
 
       <section id="research" class="content-section" aria-labelledby="research-heading">
@@ -224,74 +341,123 @@
       </section>
 
       <section id="publications" class="content-section" aria-labelledby="publications-heading">
-        <div class="section-header"><div><p class="section-kicker">02 / Selected Publications</p><h2 id="publications-heading">代表性论文</h2><p class="section-description">已发表论文，含期刊在线发表版本。点击题目可访问 DOI；本人姓名加粗。</p></div><p class="section-aside">2020 — 2026</p></div>
+        <div class="section-header"><div><p class="section-kicker">02 / Publications</p><h2 id="publications-heading">代表性已发表论文</h2><p class="section-description">第一作者或通讯作者论文 <span data-publication-total>10</span> 篇（含共同第一、共同通讯作者）。本人姓名加粗，点击题目可访问全文或期刊页面。</p></div><span class="section-aside">2020 — 2026</span></div>
         <div class="publication-tools">
-          <div class="filters" role="group" aria-label="按研究类型筛选论文">
-            <button class="filter" type="button" data-filter="all" aria-pressed="true">全部论文</button>
-            <button class="filter" type="button" data-filter="mechanisms" aria-pressed="false">机制与综述</button>
-            <button class="filter" type="button" data-filter="clinical" aria-pressed="false">临床与循证</button>
+          <div class="filters" role="group" aria-label="按论文类型筛选">
+            <button class="filter" type="button" data-filter="all" aria-pressed="true">全部论文<span class="filter-count">10</span></button>
+            <button class="filter" type="button" data-filter="original" aria-pressed="false">原创研究<span class="filter-count">2</span></button>
+            <button class="filter" type="button" data-filter="review" aria-pressed="false">综述与 Meta<span class="filter-count">5</span></button>
+            <button class="filter" type="button" data-filter="clinical" aria-pressed="false">临床病例<span class="filter-count">2</span></button>
+            <button class="filter" type="button" data-filter="letter" aria-pressed="false">学术来信<span class="filter-count">1</span></button>
           </div>
-          <span class="result-count" aria-live="polite">显示 7 篇论文</span>
+          <span class="result-count" aria-live="polite">显示 10 / 10 篇已发表论文</span>
         </div>
         <div class="publications-panel">
-            <article class="paper" data-category="mechanisms" lang="en">
-              <div class="paper-year">2026<span>ONLINE</span></div>
-              <div class="paper-main"><h3 class="paper-title"><a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1186/s13293-026-00993-8">Evaluating sex as a modifier of cardiomyocyte relaxation in heart failure with preserved ejection fraction: calcium handling, titin, and bioenergetics.</a></h3>
-                <div class="paper-details"><span>Wang B, <b>Dai XC</b>.<br />
-              <i>Biology of Sex Differences</i>. 2026. <span lang="zh-CN">在线发表 · 通讯作者</span></span></div>
-              </div>
-            </article>
-            <article class="paper" data-category="mechanisms" lang="en">
-              <div class="paper-year">2026<span>ONLINE</span></div>
-              <div class="paper-main"><h3 class="paper-title"><a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1186/s13062-026-00932-y">An ICAM1⁺ inflammatory fibroblast state in atrial fibrillation and metabolic-stress-associated atrial remodeling.</a></h3>
-                <div class="paper-details"><span><b>Dai XC</b>, Pan YY, Liu SP, et al.<br />
-              <i>Biology Direct</i>. 2026. <span lang="zh-CN">在线发表 · 共同第一作者，排名第一</span></span></div>
-              </div>
-            </article>
-            <article class="paper" data-category="clinical" lang="en">
-              <div class="paper-year">2024<span>PUBLISHED</span></div>
-              <div class="paper-main"><h3 class="paper-title"><a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1186/s13040-024-00356-2">Assessment of the causal relationship between gut microbiota and cardiovascular diseases: a bidirectional Mendelian randomization analysis.</a></h3>
-                <div class="paper-details"><span><b>Dai XC</b>, Yu Y, Zhou SY, Yu S, Xiang MX, Ma H.<br />
-              <i>BioData Mining</i>. 2024;17:6. <span lang="zh-CN">共同第一作者，排名第一</span></span></div>
-              </div>
-            </article>
-            <article class="paper" data-category="clinical" lang="en">
-              <div class="paper-year">2023<span>PUBLISHED</span></div>
-              <div class="paper-main"><h3 class="paper-title"><a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1001/jamainternmed.2022.4777">Unexpected Cause Behind Life-threatening ECG Changes—A Diagnostic Challenge.</a></h3>
-                <div class="paper-details"><span>Wang H, Fan YW, <b>Dai XC</b>.<br />
-              <i>JAMA Internal Medicine</i>. 2023;183(1):72–73.</span></div>
-              </div>
-            </article>
-            <article class="paper" data-category="clinical" lang="en">
-              <div class="paper-year">2022<span>PUBLISHED</span></div>
-              <div class="paper-main"><h3 class="paper-title"><a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.3389/fcvm.2022.932716">Association of admission hyperglycemia and all-cause mortality in acute myocardial infarction with percutaneous coronary intervention: A dose–response meta-analysis.</a></h3>
-                <div class="paper-details"><span>Cheng SY, Wang H, Lin SH, Wen JH, Ma LL, <b>Dai XC</b>.<br />
-              <i>Frontiers in Cardiovascular Medicine</i>. 2022;9:932716.</span></div>
-              </div>
-            </article>
-            <article class="paper" data-category="clinical" lang="en">
-              <div class="paper-year">2021<span>PUBLISHED</span></div>
-              <div class="paper-main"><h3 class="paper-title"><a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1161/CIRCULATIONAHA.121.053765">Severe Arrhythmia Caused by a Chinese Herb Liquor: What Is the Diagnosis?</a></h3>
-                <div class="paper-details"><span><b>Dai XC</b>, An ZY.<br />
-              <i>Circulation</i>. 2021;143(14):1450–1451.</span></div>
-              </div>
-            </article>
-            <article class="paper" data-category="clinical" lang="en">
-              <div class="paper-year">2020<span>PUBLISHED</span></div>
-              <div class="paper-main"><h3 class="paper-title"><a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1186/s12872-020-01354-y">Relationship between fluoroquinolones and the risk of aortic diseases: a meta-analysis of observational studies.</a></h3>
-                <div class="paper-details"><span><b>Dai XC</b>, Yang XX, Ma L, Tang GM, Pan YY, Hu HL.<br />
-              <i>BMC Cardiovascular Disorders</i>. 2020;20:49. <span lang="zh-CN">共同第一作者，排名第一</span></span></div>
-              </div>
-            </article>
+          <section class="publication-year-group" aria-label="2026 年发表论文">
+            <div class="year-label"><span>2026</span><small><span class="year-count">2</span> 篇论文</small></div>
+            <div class="year-papers">
+              <article class="paper" data-category="review" data-doi="10.1186/s13293-026-00993-8">
+                <div class="paper-labels"><span class="paper-type">综述</span><span class="paper-role">通讯作者</span></div>
+                <h3 class="paper-title" lang="en"><a href="https://doi.org/10.1186/s13293-026-00993-8" target="_blank" rel="noopener noreferrer">Evaluating sex as a modifier of cardiomyocyte relaxation in heart failure with preserved ejection fraction: calcium handling, titin, and bioenergetics.</a></h3>
+                <p class="paper-authors" lang="en">Wang B, <b>Dai XC</b>.</p>
+                <p class="paper-citation" lang="en"><span class="paper-journal">Biology of Sex Differences</span><span class="citation-separator" aria-hidden="true">·</span><span>2026 · 在线发表</span></p>
+              </article>
+              <article class="paper" data-category="original" data-doi="10.1186/s13062-026-00932-y">
+                <div class="paper-labels"><span class="paper-type">原创研究</span><span class="paper-role">共同第一作者，排名第一</span></div>
+                <h3 class="paper-title" lang="en"><a href="https://doi.org/10.1186/s13062-026-00932-y" target="_blank" rel="noopener noreferrer">An ICAM1⁺ inflammatory fibroblast state in atrial fibrillation and metabolic-stress-associated atrial remodeling.</a></h3>
+                <p class="paper-authors" lang="en"><b>Dai XC</b>, Pan YY, Liu SP, et al.</p>
+                <p class="paper-citation" lang="en"><span class="paper-journal">Biology Direct</span><span class="citation-separator" aria-hidden="true">·</span><span>2026 · 在线发表</span></p>
+              </article>
+            </div>
+          </section>
+          <section class="publication-year-group" aria-label="2024 年发表论文">
+            <div class="year-label"><span>2024</span><small><span class="year-count">1</span> 篇论文</small></div>
+            <div class="year-papers">
+              <article class="paper" data-category="original" data-doi="10.1186/s13040-024-00356-2">
+                <div class="paper-labels"><span class="paper-type">原创研究</span><span class="paper-role">共同第一作者，排名第一</span></div>
+                <h3 class="paper-title" lang="en"><a href="https://doi.org/10.1186/s13040-024-00356-2" target="_blank" rel="noopener noreferrer">Assessment of the causal relationship between gut microbiota and cardiovascular diseases: a bidirectional Mendelian randomization analysis.</a></h3>
+                <p class="paper-authors" lang="en"><b>Dai XC</b>, Yu Y, Zhou SY, Yu S, Xiang MX, Ma H.</p>
+                <p class="paper-citation" lang="en"><span class="paper-journal">BioData Mining</span><span class="citation-separator" aria-hidden="true">·</span><span>2024;17:6</span></p>
+              </article>
+            </div>
+          </section>
+          <section class="publication-year-group" aria-label="2023 年发表论文">
+            <div class="year-label"><span>2023</span><small><span class="year-count">1</span> 篇论文</small></div>
+            <div class="year-papers">
+              <article class="paper" data-category="clinical" data-doi="10.1001/jamainternmed.2022.4777">
+                <div class="paper-labels"><span class="paper-type">临床病例</span><span class="paper-role">通讯作者</span></div>
+                <h3 class="paper-title" lang="en"><a href="https://doi.org/10.1001/jamainternmed.2022.4777" target="_blank" rel="noopener noreferrer">Unexpected Cause Behind Life-threatening ECG Changes—A Diagnostic Challenge.</a></h3>
+                <p class="paper-authors" lang="en">Wang H, Fan YW, <b>Dai XC</b>.</p>
+                <p class="paper-citation" lang="en"><span class="paper-journal">JAMA Internal Medicine</span><span class="citation-separator" aria-hidden="true">·</span><span>2023;183(1):72–73</span></p>
+              </article>
+            </div>
+          </section>
+          <section class="publication-year-group" aria-label="2022 年发表论文">
+            <div class="year-label"><span>2022</span><small><span class="year-count">2</span> 篇论文</small></div>
+            <div class="year-papers">
+              <article class="paper" data-category="review" data-doi="10.3389/fcvm.2022.932716">
+                <div class="paper-labels"><span class="paper-type">Meta 分析</span><span class="paper-role">共同通讯作者</span></div>
+                <h3 class="paper-title" lang="en"><a href="https://doi.org/10.3389/fcvm.2022.932716" target="_blank" rel="noopener noreferrer">Association of admission hyperglycemia and all-cause mortality in acute myocardial infarction with percutaneous coronary intervention: A dose–response meta-analysis.</a></h3>
+                <p class="paper-authors" lang="en">Cheng SY, Wang H, Lin SH, Wen JH, Ma LL, <b>Dai XC</b>.</p>
+                <p class="paper-citation" lang="en"><span class="paper-journal">Frontiers in Cardiovascular Medicine</span><span class="citation-separator" aria-hidden="true">·</span><span>2022;9:932716</span></p>
+              </article>
+              <article class="paper" data-category="letter" data-doi="10.1093/eurjpc/zwaa075">
+                <div class="paper-labels"><span class="paper-type">学术来信</span><span class="paper-role">第一作者</span></div>
+                <h3 class="paper-title" lang="en"><a href="https://doi.org/10.1093/eurjpc/zwaa075" target="_blank" rel="noopener noreferrer">Whether higher chocolate consumption is associated with a reduction in risk of coronary artery disease? We are not sure.</a></h3>
+                <p class="paper-authors" lang="en"><b>Dai XC</b>, Zhao K.</p>
+                <p class="paper-citation" lang="en"><span class="paper-journal">European Journal of Preventive Cardiology</span><span class="citation-separator" aria-hidden="true">·</span><span>2022;28(18):e50</span></p>
+              </article>
+            </div>
+          </section>
+          <section class="publication-year-group" aria-label="2021 年发表论文">
+            <div class="year-label"><span>2021</span><small><span class="year-count">3</span> 篇论文</small></div>
+            <div class="year-papers">
+              <article class="paper" data-category="review" data-doi="10.3389/fcvm.2021.752675">
+                <div class="paper-labels"><span class="paper-type">系统综述与 Meta 分析</span><span class="paper-role">共同通讯作者</span></div>
+                <h3 class="paper-title" lang="en"><a href="https://doi.org/10.3389/fcvm.2021.752675" target="_blank" rel="noopener noreferrer">Association Between Out-of-Hour Admission and Short- and Long-Term Mortality in Acute Myocardial Infarction: A Systematic Review and Meta-Analysis.</a></h3>
+                <p class="paper-authors" lang="en">Yu YY, Zhao BW, Ma L, <b>Dai XC</b>.</p>
+                <p class="paper-citation" lang="en"><span class="paper-journal">Frontiers in Cardiovascular Medicine</span><span class="citation-separator" aria-hidden="true">·</span><span>2021;8:752675</span></p>
+              </article>
+              <article class="paper" data-category="review" data-doi="10.3389/fcvm.2021.609857">
+                <div class="paper-labels"><span class="paper-type">Meta 分析</span><span class="paper-role">共同第一作者，排名第一；通讯作者</span></div>
+                <h3 class="paper-title" lang="en"><a href="https://doi.org/10.3389/fcvm.2021.609857" target="_blank" rel="noopener noreferrer">Associations Between the Use of Renin-Angiotensin System Inhibitors and the Risks of Severe COVID-19 and Mortality in COVID-19 Patients With Hypertension: A Meta-Analysis of Observational Studies.</a></h3>
+                <p class="paper-authors" lang="en"><b>Dai XC</b>, An ZY, Wang ZY, Wang ZZ, Wang YR.</p>
+                <p class="paper-citation" lang="en"><span class="paper-journal">Frontiers in Cardiovascular Medicine</span><span class="citation-separator" aria-hidden="true">·</span><span>2021;8:609857</span></p>
+              </article>
+              <article class="paper" data-category="clinical" data-doi="10.1161/CIRCULATIONAHA.121.053765">
+                <div class="paper-labels"><span class="paper-type">临床病例</span><span class="paper-role">第一作者</span></div>
+                <h3 class="paper-title" lang="en"><a href="https://doi.org/10.1161/CIRCULATIONAHA.121.053765" target="_blank" rel="noopener noreferrer">Severe Arrhythmia Caused by a Chinese Herb Liquor: What Is the Diagnosis?</a></h3>
+                <p class="paper-authors" lang="en"><b>Dai XC</b>, An ZY.</p>
+                <p class="paper-citation" lang="en"><span class="paper-journal">Circulation</span><span class="citation-separator" aria-hidden="true">·</span><span>2021;143(14):1450–1451</span></p>
+              </article>
+            </div>
+          </section>
+          <section class="publication-year-group" aria-label="2020 年发表论文">
+            <div class="year-label"><span>2020</span><small><span class="year-count">1</span> 篇论文</small></div>
+            <div class="year-papers">
+              <article class="paper" data-category="review" data-doi="10.1186/s12872-020-01354-y">
+                <div class="paper-labels"><span class="paper-type">Meta 分析</span><span class="paper-role">第一作者，排名第一</span></div>
+                <h3 class="paper-title" lang="en"><a href="https://doi.org/10.1186/s12872-020-01354-y" target="_blank" rel="noopener noreferrer">Relationship between fluoroquinolones and the risk of aortic diseases: a meta-analysis of observational studies.</a></h3>
+                <p class="paper-authors" lang="en"><b>Dai XC</b>, Yang XX, Ma L, Tang GM, Pan YY, Hu HL.</p>
+                <p class="paper-citation" lang="en"><span class="paper-journal">BMC Cardiovascular Disorders</span><span class="citation-separator" aria-hidden="true">·</span><span>2020;20:49</span></p>
+              </article>
+            </div>
+          </section>
         </div>
       </section>
 
       <section id="projects" class="content-section" aria-labelledby="projects-heading">
-        <div class="section-header"><div><p class="section-kicker">03 / Current Research</p><h2 id="projects-heading">正在推进的研究</h2><p class="section-description">以下为尚未发表的研究；项目状态截至 2026 年 10 月 19 日。</p></div></div>
+        <div class="section-header"><div><p class="section-kicker">03 / Research in Progress</p><h2 id="projects-heading">修订中与进行中的研究</h2><p class="section-description">修订稿与进行中的项目单独列示，不计入上方 10 篇已发表论文。</p></div></div>
         <div class="project-grid">
-          <article class="project project-featured ripple-surface">
-            <div><p class="status">稿件修订中 · 尚未发表</p><h3>加速度计身体活动与糖尿病心血管结局</h3><p class="project-title-en" lang="en">Weekly recurrence of multiple moderate-to-vigorous physical activity bouts and risks of death and cardiovascular events in type 2 diabetes.</p><p>基于 UK Biobank 与 NHANES，研究每周持续性 MVPA 的复现模式及其与死亡和心血管结局的关联。</p></div>
-            <div class="project-link"><a class="button" href="https://movementevidence.com/" target="_blank" rel="noopener noreferrer">研究数据展示 <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 15 15 5M5 5h10v10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><small lang="en">movementevidence.com</small></div>
+          <article id="ncr-manuscript" class="project project-featured manuscript-card ripple-surface" aria-labelledby="ncr-title">
+            <div class="manuscript-body">
+              <p class="manuscript-kicker">MANUSCRIPT UNDER REVISION</p>
+              <div class="revision-header"><span class="revision-journal" lang="en">Nature Cardiovascular Research</span><span class="revision-badge">修稿中</span></div>
+              <h3 id="ncr-title">加速度计身体活动与糖尿病心血管结局</h3>
+              <p class="project-title-en" lang="en">Weekly recurrence of multiple moderate-to-vigorous physical activity bouts and risks of death and cardiovascular events in type 2 diabetes.</p>
+              <p>基于 UK Biobank 与 NHANES，研究每周持续性 MVPA 的复现模式及其与死亡和心血管结局的关联。</p>
+              <div class="manuscript-footer"><span>尚未发表 · 共同第一作者，排名第一</span><div class="project-link"><a class="button" href="https://movementevidence.com/" target="_blank" rel="noopener noreferrer">研究数据展示 <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 15 15 5M5 5h10v10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><small lang="en">movementevidence.com</small></div></div>
+            </div>
           </article>
           <article class="project ripple-surface"><p class="status">研究进行中</p><h3>内皮谷氨酰胺代谢与血管新生</h3><p>研究 GLUL、己糖胺生物合成通路与 O-GlcNAc 修饰在内皮迁移、血管新生及心脏重构中的作用。</p></article>
           <article class="project ripple-surface"><p class="status">研究进行中</p><h3>心血管疾病临床数据库研究</h3><p>利用 MIMIC-IV 等临床数据库，围绕心力衰竭、急性肾损伤及重症心血管疾病开展临床结局与治疗策略研究。</p></article>
@@ -302,7 +468,7 @@
         <div><p class="section-kicker">04 / Contact</p><h2 id="contact-heading">交流与合作</h2><p class="contact-intro">欢迎围绕心血管基础机制、临床队列与循证研究交流。</p></div>
         <div class="contact-details"><a class="contact-email" href="mailto:ielts_kris@163.com">ielts_kris@163.com <span aria-hidden="true">↗</span></a><div class="contact-links"><a href="https://orcid.org/0000-0002-2214-3251" target="_blank" rel="me noopener noreferrer">ORCID <span aria-hidden="true">↗</span></a><a href="https://github.com/XiaoceDai" target="_blank" rel="me noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div><address>浙江医院 · 心血管内科 · 杭州，中国</address></div>
       </section>
-      <footer class="site-footer"><span>© 2026 Xiao-Ce Dai · 戴小策</span><span>Last updated: <time datetime="2026-10-19">19 October 2026</time></span></footer>
+      <footer class="site-footer"><span>© 2026 Xiao-Ce Dai · 戴小策</span><span>Last updated: <time datetime="2026-10-21">21 October 2026</time></span></footer>
     </main>
     <script>
       (function () {
@@ -344,20 +510,32 @@
           });
         }
         var filters = document.querySelectorAll('[data-filter]');
-        var papers = document.querySelectorAll('.paper');
+        var papers = Array.from(document.querySelectorAll('#publications .paper'));
+        var yearGroups = document.querySelectorAll('.publication-year-group');
         var counter = document.querySelector('.result-count');
+        document.querySelectorAll('[data-publication-total]').forEach(function (node) { node.textContent = papers.length; });
+        function filterPublications(filter) {
+          var count = 0;
+          papers.forEach(function (paper) {
+            paper.hidden = filter !== 'all' && paper.dataset.category !== filter;
+            if (!paper.hidden) count += 1;
+          });
+          yearGroups.forEach(function (group) {
+            var visible = Array.from(group.querySelectorAll('.paper')).filter(function (paper) { return !paper.hidden; }).length;
+            group.hidden = visible === 0;
+            group.querySelector('.year-count').textContent = visible;
+          });
+          counter.textContent = '显示 ' + count + ' / ' + papers.length + ' 篇已发表论文';
+        }
         filters.forEach(function (button) {
+          var count = papers.filter(function (paper) { return button.dataset.filter === 'all' || paper.dataset.category === button.dataset.filter; }).length;
+          button.querySelector('.filter-count').textContent = count;
           button.addEventListener('click', function () {
-            var filter = button.dataset.filter;
             filters.forEach(function (item) { item.setAttribute('aria-pressed', String(item === button)); });
-            var count = 0;
-            papers.forEach(function (paper) {
-              paper.hidden = filter !== 'all' && paper.dataset.category !== filter;
-              if (!paper.hidden) count += 1;
-            });
-            counter.textContent = '显示 ' + count + ' 篇论文';
+            filterPublications(button.dataset.filter);
           });
         });
+        filterPublications('all');
         var links = document.querySelectorAll('.main-nav a');
         if ('IntersectionObserver' in window) {
           var observer = new IntersectionObserver(function (entries) {
